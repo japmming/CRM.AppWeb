@@ -1,0 +1,30 @@
+﻿Ejemplo de Tab (Estructura)
+
+HTML5
+**********************
+<div id="ID" class="jtse-tabs">
+	<div>							/*Cuerpo de los tabs por cada etiqueta div*/
+		<span>Tab1</span>
+	</div>
+	<div>
+		<span>Tab2</span>
+	</div>
+</div>
+
+JAVASCRIPT
+**********************
+var titles = ['Tab1', 'Tab2']			/*Títulos de tabs*/
+$$tabs('ID').create(titles);			/*Creación del tab*/
+fontSize: ['16'],						/*Tamaño fuente de los Tabs*/
+fontWeight: ['bold']					/*Estilo de fuente de los tabs*/
+			//bold;
+            //bolder
+            //inherit
+            //initial
+            //lighter
+            //normal
+            //unset
+textAlign:  ['center']					/*Alinacion de los Tabs*/
+            //center
+			//left
+			//right

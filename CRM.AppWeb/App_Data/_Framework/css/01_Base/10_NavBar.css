@@ -1,0 +1,13 @@
+﻿.navbar-toolbar > li:after, .navbar-toolbar > li:before {
+    display: table;
+    content: " ";
+}
+
+.navbar-toolbar > li:after {
+    clear: both;
+}
+
+.navbar-toolbar > li:after, .navbar-toolbar > li:before {
+    display: table;
+    content: " ";
+}

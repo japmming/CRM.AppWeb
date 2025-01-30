@@ -1,0 +1,84 @@
+.alert-area {
+    position: fixed;
+    display: flex;
+    margin: 5px;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 2000;
+}
+
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.up {
+    top: 100px;
+}
+
+.down {
+    bottom: 100px;
+}
+
+.alert-box {
+    position: relative;
+    float: right;
+    padding: 10px 10px;
+    margin: 5px 5px;
+    min-width: 19em;
+    -webkit-animation-name: mostrar;
+    -webkit-animation-duration: 0.3s;
+    animation-name: mostrar;
+    animation-duration: 0.3s;
+}
+
+    .alert-box.hided {
+        -webkit-animation-name: ocultar;
+        -webkit-animation-duration: 0.5s;
+        animation-name: ocultar;
+        animation-duration: 0.5s;
+    }
+
+@keyframes mostrar {
+    from {
+        right: -500px;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes ocultar {
+    from {
+        right: 0;
+        opacity: 1;
+    }
+
+    to {
+        right: -500px;
+        opacity: 0;
+    }
+}
+
+.alert-content {
+    color: white;
+    font-size: 13px;
+    padding-right: 25px;
+}
+
+.alert-close {
+    position: absolute;
+    width: 25px;
+    font-size: 28px;
+    color: white;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}

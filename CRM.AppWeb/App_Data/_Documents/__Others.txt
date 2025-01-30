@@ -1,0 +1,33 @@
+﻿define([AppName, //module
+		"AprobarDonanteLista" //namespace
+], function (module, namespace) {
+	"use strict";
+	var service = function ($service, $http) {
+		//$service.listar = function (item) {
+		//	return $http({
+		//		method: 'post',
+		//		data: item,
+		//		separator: '¯',
+		//		listSeparator: '¬',
+		//		url: "AprobarDonante/listar"
+		//	});
+		//};
+	};
+	var controller = function ($scope, $service) {
+		$scope.init = function () {
+			//var item = [{
+			//	dato1: '1',
+			//	dato2: '2'
+			//}, {
+			//	dato3: '3',
+			//	dato4: '4'
+			//}];
+			////var item = '1¦2';
+			//$service.listar(item).then(function (d) {
+			//	console.log(d);
+			//});			
+		};
+	};
+	controller.$inject = ["$scope", "$service"];
+	module.controller(namespace, controller, service);
+});

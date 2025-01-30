@@ -1,0 +1,257 @@
+﻿<style>
+    /*#region TOOLTIP*/
+    .dashboard .tooltip-btn {
+        background-color: transparent;
+        padding: 0px;
+        border: 1px solid transparent;
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    [data-tooltip] {
+        position: relative;
+        z-index: 6;
+        cursor: pointer;
+    }
+
+        [data-tooltip]:before,
+        [data-tooltip]:after {
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        [data-tooltip]:before {
+            position: absolute;
+            bottom: 150%;
+            left: 50%;
+            margin-bottom: 5px;
+            margin-left: -80px;
+            padding: 7px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background-color: #000;
+            background-color: hsla(0, 0%, 20%, 0.9);
+            color: #fff;
+            width: 150px;
+            content: attr(data-tooltip);
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+        [data-tooltip]:after {
+            position: absolute;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -5px;
+            width: 0;
+            border-top: 5px solid #000;
+            border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            content: " ";
+            font-size: 0;
+            line-height: 0;
+        }
+
+        [data-tooltip]:hover:before,
+        [data-tooltip]:hover:after {
+            visibility: visible;
+            opacity: 1;
+        }
+    /*#endregion*/
+
+</style>
+<style>
+    .card-Analytics {
+        margin-bottom: 30px !important;
+        box-shadow: 0 0.46875rem 2.1875rem rgb(4 9 20 / 3%), 0 0.9375rem 1.40625rem rgb(4 9 20 / 3%), 0 0.25rem 0.53125rem rgb(4 9 20 / 5%), 0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
+        border-width: 0;
+        transition: all .2;
+    }
+
+    .card-Analytics-header {
+        padding: .75rem 1.25rem;
+        margin-bottom: 0;
+        color: inherit;
+        background-color: #fff;
+        border-bottom: 1px solid rgba(26,54,126,0.125);
+        text-transform: uppercase;
+        color: rgba(13,27,62,0.7);
+        font-weight: bold;
+        font-size: .88rem;
+        display: flex;
+        align-items: center;
+        border-bottom-width: 1px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: .625rem;
+        height: 3.5rem;
+    }
+
+        .card-Analytics-header:first-child {
+            border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+        }
+
+    .card-Analytics-header-title {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        font-size: 1.1rem !important;
+        font-weight: 400 !important;
+        text-transform: capitalize !important;
+    }
+</style>
+<style>
+    .widget-content-right span {
+        transform: 1s;
+        transition: 1s;
+    }
+
+
+    .font-size {
+        font-size: 12px !important;
+        margin-top: 2px !important;
+    }
+    .displey-flex {
+        display: flex !important;
+    }
+    .widget-chart{
+        height:130px !important ;
+    }
+</style>
+<div class="page-content">
+    <div class="panel">
+        <div class="panel-body" style="padding-left:0px; padding-right:0px;">
+            <div class="dashboard form-horizontal" id="5">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-12 col-md-12 col-lg-6">
+                        <div class="widget-chart bg-color-Tangerine">
+                            <div class="widget-chat-wrapper-outer">
+                                <div class="widget-chart-content displey-flex">
+                                    <div class="widget-content-title font-size">Asociados Total</div>
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers font-size "><span id="SPN_01_Dashboard_ASOCACTIVOS"></span></div>
+                                    </div>
+                                </div>
+                                <div id="DIV_ASOCIADOS_ESTADOS">                                    
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-24 col-sm-12 col-md-12 col-lg-6">
+                        <div class="widget-chart bg-color-Mist">
+                            <div class="widget-chat-wrapper-outer" id="DIV_ASOCIADOS_ACTIVATE">                                                          
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-24 col-sm-12 col-md-12 col-lg-6">
+                        <div class="widget-chart bg-color-Blue">
+                            <div class="widget-chat-wrapper-outer">
+                                <div class="widget-chart-content displey-flex">
+                                    <div class="widget-content-title font-size">GCP disponible 4 dígitos</div>
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers font-size"><span id="SPN_01_Dashboard_PREFDISPONI"></span></div>
+                                    </div>
+                                </div>
+                                <div class="widget-chart-content displey-flex">
+                                    <div class="widget-content-title font-size">GCP disponible 6 dígitos</div>
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers font-size"><span id="SPN_01_Dashboard_PREFDISPONI06"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-24 col-sm-12 col-md-12 col-lg-6">
+                        <div class="widget-chart bg-color-Mint">
+                            <div class="widget-chat-wrapper-outer">
+                                <div class="widget-chart-content displey-flex">
+                                    <div class="widget-content-title font-size">GTIN 13 </div>
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers font-size"><span id="SPN_01_Dashboard_GTIN13"></span></div>
+                                    </div>
+                                </div>
+                                <div class="widget-chart-content displey-flex">
+                                    <div class="widget-content-title font-size">GTIN 08 </div>
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers font-size"><span id="SPN_01_Dashboard_GTIN08"></span></div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-24">
+                        <div class="form-group">
+                            <div class="col-xs-24 col-sm-24 col-md-12 col-lg-8">
+                                <jtse-grid id="GRD_01_Dashboard_AsociadoCategoriaCantidad" style="font-size:12px;"></jtse-grid>
+                            </div>
+                            <div class="col-xs-24 col-sm-24 col-md-12 col-lg-16">
+                                <jtse-grid id="GRD_01_Dashboard_EmpresasFasesActivate" style="font-size:12px;"></jtse-grid>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-24">
+                        <div class="form-group">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <jtse-grid id="GRD_01_Dashboard_AsociadosxEjecutiva" style="font-size:12px;"></jtse-grid>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row">
+                    <div class="col-24">
+                        <div class="form-group">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <jtse-grid id="GRD_01_Dashboard_AsociadosxEjecutiva" style="font-size:12px;"></jtse-grid>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="row">
+                    <div class="col-24">
+                        <div class="form-group">
+                            <div class="col-xs-24 col-sm-24 col-md-10 col-lg-10">
+                                <jtse-grid id="GRD_01_Dashboard_IngresoXServicioAso" style="font-size:12px; display:block">
+                                    <div class="col-24">
+                                        <div class="grid-bottom">
+                                            <div class="scroll-x w-100">
+                                                <table class="grid w-100">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="bg-color-Mist" style="width: 60%" rowspan="2">INGRESOS POR SERVICIOS A ASOCIADOS</th>
+                                                            <th class="bg-color-Mist" style="width: 10%">Año</th>
+                                                            <th class="bg-color-Mist" style="width: 30%">
+                                                                <select class="form-control" id="CBO_01_Dashboard_IngresoXServicioAso_Año">
+                                                                </select>
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="bg-color-Mist">Mes</th>
+                                                            <th class="bg-color-Mist">
+                                                                <select class="form-control" id="CBO_01_Dashboard_IngresoXServicioAso_Mes">
+                                                                </select>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="TBody_GRD_01_Dashboard_IngresoXServicioAso">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </jtse-grid>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

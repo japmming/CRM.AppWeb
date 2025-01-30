@@ -1,0 +1,22 @@
+﻿
+.input-group-telefono {
+    display: flex;
+}
+
+    .input-group-telefono > span {
+        padding: 5px 3px;
+        text-align: left;
+        display: flex;
+        width: min-content;
+    }
+
+    .input-group-telefono > select {
+        width: 90%;
+        padding: 0px 3px;
+        display: flex;
+    }
+
+    .input-group-telefono > input {
+        display: flex;
+        border-left: none;
+    }

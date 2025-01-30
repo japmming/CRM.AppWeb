@@ -1,0 +1,65 @@
+﻿.combo-content {
+    height: 24px;
+    padding: 3px 4px 0px 9px;
+    color: #555;
+    border: 1px solid #ccc;
+    display: flex;
+    cursor: pointer;
+}
+
+.item-combo:first-child {
+    flex: auto;
+    align-self: baseline;
+    user-select:none;
+}
+
+.item-combo:last-child {
+    align-self: center;
+    font-size: 11px;
+}
+
+
+.combo-content-option {
+    position: absolute;
+    overflow: auto;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    width: calc(100% - 16px);
+    z-index: 20;
+    background-color: white;
+    box-shadow: 3px 3px 4px -4px #9a9a9a;
+    max-height: 195px;
+}
+
+    .combo-content-option > .options {
+        list-style: none;
+        padding-inline-start: 0px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+        .combo-content-option > .options > li {
+            padding-left: 25px;
+            margin-bottom: 3px;
+            color: #555;
+        }
+
+            .combo-content-option > .options > li:hover {
+                color: white !important;
+                background-color: #268bea !important;
+                cursor: pointer;
+                user-select: none;
+            }
+
+    .combo-content-option .options-title {
+        color: #555;
+        font-weight: 600;
+        display: block;
+        padding: 6px;
+    }
+
+.active-item {
+    color: white !important;
+    background-color: #62a8ea;
+}

@@ -1,0 +1,34 @@
+﻿//configurarControles
+
+/*
+	Modales
+	Tablas
+	Tabs
+	Tags
+				
+
+*/
+
+//configurarBotones
+
+/*
+
+	eventos de botones
+
+*/
+
+//cargarData
+
+/*
+	llamadas a los servicios
+	setear controles
+				
+*/
+
+//$scope.grabar
+//$scope.eliminar
+
+//$scope.ext
+//$scope.limpiar
+//$scope.seleccionarFila
+//$scope.tbl

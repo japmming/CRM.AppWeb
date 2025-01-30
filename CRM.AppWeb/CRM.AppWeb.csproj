@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25951644-6CFA-4D71-A87F-672E4D183578}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GS1Peru.AppWeb</RootNamespace>
+    <AssemblyName>GS1Peru.AppWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44398</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.104.5\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleEmailV2, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SimpleEmailV2.3.7.101.63\lib\net45\AWSSDK.SimpleEmailV2.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.19.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.19.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="GS1Peru.Core, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GS1Peru.Core.1.0.0.1\lib\net461\GS1Peru.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.7.0.0\lib\netstandard2.0\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\GS1_GPIR\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Core\BaseController.cs" />
+    <Compile Include="Controllers\Core\GoogleAccessToken.cs" />
+    <Compile Include="Controllers\Core\GoogleUserOutputData.cs" />
+    <Compile Include="Controllers\Core\ModuleCustom.cs" />
+    <Compile Include="Controllers\Core\SeguridadController.cs" />
+    <Compile Include="Controllers\Core\SistemaController.cs" />
+    <Compile Include="Controllers\Entities\Email\Attachment.cs" />
+    <Compile Include="Controllers\Entities\Email\LinkedResource.cs" />
+    <Compile Include="Controllers\Entities\Email\MailMessage.cs" />
+    <Compile Include="Controllers\Entities\Email\MailAddress.cs" />
+    <Compile Include="Controllers\Modules\00_General\GenericController.cs" />
+    <Compile Include="Controllers\Modules\00_General\LayoutController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\AccionController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\CampanaController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\CanalController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\ComercialesController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\EstadoController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\EventoController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\FormularioController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\InteresController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\LeadsController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\MetricasComercialesController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\MetricasEventosController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\ReporteLeadCanalController.cs" />
+    <Compile Include="Controllers\Modules\crm\00_Mantenimiento\ReporteLeadFormularioController.cs" />
+    <Compile Include="Controllers\Modules\Seguridad\00_Mantenimiento\PlantillaCorreoController.cs" />
+    <Compile Include="Controllers\Modules\Seguridad\00_Mantenimiento\UsuariosController.cs" />
+    <Compile Include="Controllers\Modules\Seguridad\Utilitarios\UsuarioPermisoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="App\Modules\00_General\Controllers\Dashboard.js" />
+    <Content Include="App\Modules\00_General\Controllers\EnEspera.js" />
+    <Content Include="App\Modules\00_General\Controllers\Inicio.js" />
+    <Content Include="App\Modules\00_General\Controllers\Layout.js" />
+    <Content Include="App\Modules\00_General\Controllers\ForgetPassword.js" />
+    <Content Include="App\Modules\00_General\Controllers\LoginAccess.js" />
+    <Content Include="App\Modules\00_General\Views\Dashboard.html" />
+    <Content Include="App\Modules\00_General\Views\EnEspera.html" />
+    <Content Include="App\Modules\00_General\Views\Inicio.html" />
+    <Content Include="App\Modules\00_General\Views\Layout.html" />
+    <Content Include="App\Modules\00_General\Views\ForgetPassword.html" />
+    <Content Include="App\Modules\00_General\Views\LoginAccess.html" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Controllers\Accion.js" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Controllers\Estado.js" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Controllers\Formulario.js" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Views\Accion.html" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Views\Estado.html" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Views\Formulario.html" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\Controllers\Campana.js" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Controllers\Canal.js" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\Controllers\Eventos.js" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Controllers\Interes.js" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\Controllers\LeadsCUD.js" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\Views\Campana.html" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Views\Canal.html" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\Views\Eventos.html" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\00_Tablas\Views\Interes.html" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\Views\LeadsCUD.html" />
+    <Content Include="App\Modules\crm\01_Transaccion\Controllers\Comerciales.js" />
+    <Content Include="App\Modules\crm\01_Transaccion\Controllers\readme.txt" />
+    <Content Include="App\Modules\crm\01_Transaccion\Views\Comerciales.html" />
+    <Content Include="App\Modules\crm\01_Transaccion\Views\readme.txt" />
+    <Content Include="App\Modules\crm\02_Consulta\Controllers\MetricasComerciales.js" />
+    <Content Include="App\Modules\crm\02_Consulta\Controllers\MetricasEventos.js" />
+    <Content Include="App\Modules\crm\02_Consulta\Controllers\readme.txt" />
+    <Content Include="App\Modules\crm\02_Consulta\Controllers\ReporteLeadCanal.js" />
+    <Content Include="App\Modules\crm\02_Consulta\Controllers\ReporteLeadFormulario.js" />
+    <Content Include="App\Modules\crm\02_Consulta\Views\MetricasComerciales.html" />
+    <Content Include="App\Modules\crm\02_Consulta\Views\MetricasEventos.html" />
+    <Content Include="App\Modules\crm\02_Consulta\Views\readme.txt" />
+    <Content Include="App\Modules\crm\02_Consulta\Views\ReporteLeadCanal.html" />
+    <Content Include="App\Modules\crm\02_Consulta\Views\ReporteLeadFormulario.html" />
+    <Content Include="App\Modules\crm\03_Reporte\Controllers\readme.txt" />
+    <Content Include="App\Modules\crm\03_Reporte\Views\readme.txt" />
+    <Content Include="App\Modules\crm\04_Utilitario\Controllers\01_Dashboard.js" />
+    <Content Include="App\Modules\crm\04_Utilitario\Controllers\readme.txt" />
+    <Content Include="App\Modules\crm\04_Utilitario\Views\01_Dashboard.html" />
+    <Content Include="App\Modules\crm\04_Utilitario\Views\readme.txt" />
+    <Content Include="App\Modules\Seguridad\00_Mantenimiento\Controllers\UsuarioMante.js" />
+    <Content Include="App\Modules\Seguridad\00_Mantenimiento\Views\UsuarioMante.html" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\Controllers\Leads.js" />
+    <Content Include="App\Modules\crm\00_Mantenimiento\Views\Leads.html" />
+    <Content Include="App\Modules\Seguridad\01_Transaccion\Controllers\readme.txt" />
+    <Content Include="App\Modules\Seguridad\01_Transaccion\Views\readme.txt" />
+    <Content Include="App\Modules\Seguridad\02_Consulta\Controllers\readme.txt" />
+    <Content Include="App\Modules\Seguridad\02_Consulta\Views\readme.txt" />
+    <Content Include="App\Modules\Seguridad\03_Reporte\Controllers\readme.txt" />
+    <Content Include="App\Modules\Seguridad\03_Reporte\Views\readme.txt" />
+    <Content Include="App\Modules\Seguridad\04_Utilitario\Controllers\UsuarioPermiso.js" />
+    <Content Include="App\Modules\Seguridad\04_Utilitario\Views\UsuarioPermiso.html" />
+    <Content Include="App\Support\Extends\xlsx.full.min.js" />
+    <Content Include="App\Support\Fonts\fontawesome-webfont.svg" />
+    <Content Include="App\Support\jtseScripts.min.js">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jtseScripts.tt</DependentUpon>
+    </Content>
+    <Content Include="App\Support\jtseScripts.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>jtseScripts.min.js</LastGenOutput>
+    </Content>
+    <Content Include="App\Support\jtseStyles.min.css">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jtseStyles.tt</DependentUpon>
+    </Content>
+    <Content Include="App\Support\jtseStyles.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>jtseStyles.min.css</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\_Documents\ChartJS.txt" />
+    <Content Include="App_Data\_Documents\LibTreeView.txt" />
+    <Content Include="App_Data\_Documents\Lib_Modal.txt" />
+    <Content Include="App_Data\_Documents\Lib_Table.txt" />
+    <Content Include="App_Data\_Documents\Lib_Tabs.txt" />
+    <Content Include="App_Data\_Documents\_Controller.txt" />
+    <Content Include="App_Data\_Documents\_Estandar.txt" />
+    <Content Include="App_Data\_Documents\_Inject_Controller.txt" />
+    <Content Include="App_Data\_Documents\_View.txt" />
+    <Content Include="App_Data\_Documents\__Others.txt" />
+    <Content Include="App_Data\_Framework\css\01_Base\00_Imports.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\01_Base.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\02_Generic.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\03_Align.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\04_Container.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\05_Forms.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\06_Columns.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\07_Button.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\08_Panel.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\09_Modal.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\10_NavBar.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\11_Text.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\12_Fonts.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\13_Span.css" />
+    <Content Include="App_Data\_Framework\css\01_Base\14_Fieldset.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\Accordion.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\selectgroup.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\MultiTagCheck.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\Alert.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\AlertBox.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\DatePicker.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\Dialog.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\DialogIcon.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\Grid.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\Loading.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\Popover.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\Autocomplete.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\Tabs.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\Tags.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\ToolTip.css" />
+    <Content Include="App_Data\_Framework\css\02_Directives\xx_Wizards.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\00_General.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\01_Colors.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\02_Fonts.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\03_Modules.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\04_MediaQuery.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\xx_Sliders.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\xx_Asociados.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\xx_ChartJS.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\xx_Dashboard.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\xx_FontFamily.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\xx_Layout.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\xx_Login.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\xx_Progress.css" />
+    <Content Include="App_Data\_Framework\css\03_Modules\xx_Telefono.css" />
+    <Content Include="App_Data\_Framework\js\01_Base\01_General_Constants.js" />
+    <Content Include="App_Data\_Framework\js\01_Base\02_Filters.js" />
+    <Content Include="App_Data\_Framework\js\01_Base\03_Functions.js" />
+    <Content Include="App_Data\_Framework\js\01_Base\04_Framework.js" />
+    <Content Include="App_Data\_Framework\js\01_Base\05_Startup.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Accordion.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Autocomplete.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Birthday.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\selectgroup.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\MultiTagCheck.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Alert.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\AlertBox.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\DatePicker.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Dialog.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Grid.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Loading.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\MD5.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Modal.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\MultiSelect.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\MultiTags.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Popover.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Table.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Tabs.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Tooltip.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\xx_ChartJS.js" />
+    <Content Include="App_Data\_Framework\js\02_Directives\Progress.js" />
+    <None Include="Connected Services\GS1_GPIR\configuration91.svcinfo" />
+    <None Include="Connected Services\GS1_GPIR\configuration.svcinfo" />
+    <Content Include="App_Data\_Framework\js\02_Directives\xx_Wizards.js" />
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.deleteItemsByGtinAndAdministeringMOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.deletePartiesByAdministeringMOAndRegistryValueAndTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.getItemImportStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.getPartyImportStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.insertItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.insertPartiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.itemImportStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.loadItemFromExcelMTOMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.loadItemFromExcelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.loadPartyFromExcelMTOMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.loadPartyFromExcelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.partyImportStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.updateItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.updatePartiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.validateItemFromExcelMTOMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.validateItemFromExcelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.validatePartyFromExcelMTOMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GS1_GPIR\GS1Peru.AppWeb.GS1_GPIR.validatePartyFromExcelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\GS1_GPIR\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Controllers\Modules\Seguridad\01_Transaccion\readme.txt" />
+    <Content Include="Controllers\Modules\Seguridad\02_Consulta\readme.txt" />
+    <Content Include="Controllers\Modules\Seguridad\03_Reporte\readme.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="Resources\Images\Avatar_default.png" />
+    <Content Include="Resources\Images\crm.png" />
+    <Content Include="Resources\Images\favicon_nc.jpg" />
+    <Content Include="Resources\Images\Flags\ENG_512px.png" />
+    <Content Include="Resources\Images\Flags\españa_512px.png" />
+    <Content Include="Resources\Images\Flags\ESP_512px.png" />
+    <Content Include="Resources\Images\ico_natcodee.png" />
+    <Content Include="Resources\Images\Image_Default.png" />
+    <Content Include="Resources\Images\favicon.ico" />
+    <Content Include="Resources\Images\login_logo.jpg" />
+    <Content Include="Resources\Images\l_natcodee.png" />
+    <Content Include="Resources\Images\Mail\asistente.png" />
+    <Content Include="Resources\Images\Mail\banner_mail.gif" />
+    <Content Include="Resources\Images\Mail\logo_gs1pe.jpg" />
+    <Content Include="Resources\Images\Mail\mail_compress.png" />
+    <Content Include="Resources\Images\Mail\phone_compress.png" />
+    <Content Include="Resources\Images\Mail\telefono.png" />
+    <Content Include="Resources\Images\Mail\telephone_compress.png" />
+    <Content Include="Resources\Images\Mail\usuario_compress.png" />
+    <Content Include="Resources\Images\Modules\5.png" />
+    <Content Include="Resources\Images\Modules\9.png" />
+    <Content Include="Resources\Images\Modules\11.png" />
+    <Content Include="Resources\Images\Modules\default-module.png" />
+    <Content Include="Resources\Images\Modules\10.png" />
+    <Content Include="Resources\Images\Modules\7.png" />
+    <Content Include="Resources\Images\Modules\8.png" />
+    <Content Include="Resources\Images\Modules\6.png" />
+    <Content Include="Resources\Images\modulo.png" />
+    <Content Include="Resources\Plantillas\Correo\INLOG\01_CronogramaPago.html" />
+    <Content Include="Resources\Plantillas\Correo\RecuperarClave.html" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\Support\Fonts\fontawesome-webfont.eot" />
+    <Content Include="App\Support\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="App\Support\Fonts\fontawesome-webfont.woff" />
+    <Content Include="App\Support\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="App\Support\Fonts\FontAwesome.otf" />
+    <Content Include="App\Support\Fonts\roboto.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Sistema\Inicio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GS1_GPIR\Gepir4xImportService.wsdl" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GS1_GPIR\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.SimpleEmailV2.3.7.101.63\analyzers\dotnet\cs\AWSSDK.SimpleEmailV2.CodeAnalysis.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54698</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44350/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,66 @@
+﻿.slideThree {
+    width: 80px;
+    height: 24px;
+    background: #F3F7F9;
+    border: 1px solid #ccc;
+    /* margin: 20px auto; */
+    position: relative;
+    /*border-radius: 50px;*/
+    display: inline-block;
+    transition: all 0.4s ease-in;
+}
+
+.slideThree.alt {
+    background: #62a8ea;
+}
+
+.slideThree:after {
+    content: 'NO';
+    color: #FF0000;
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    z-index: 0;
+    /*font-weight: bold;*/
+}
+
+.slideThree:before {
+    content: 'SI';
+    color: #FFFFFF;
+    position: absolute;
+    left: 10px;
+    top: 2px;
+    z-index: 0;
+    /*font-weight: bold;*/
+}
+
+.slideThree label {
+    display: block;
+    width: 34px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    border: 1px solid #ccc;
+    top: 2px;
+    left: 3px;
+    z-index: 1;
+    background: #fff;
+    /*border-radius: 50px;*/
+    transition: all 0.4s ease;
+}
+
+.slideThree input[type=checkbox] {
+    visibility: hidden;
+}
+
+    .slideThree input[type=checkbox]:checked + label {
+        left: 41px;
+    }
+/* 
+CHK.addEventListener('change', function () {
+    if (chk_IPR_facturado.checked == true) {
+        DIV_CHK.classList.add('alt');
+    } else {
+        DIV_CHK.classList.remove('alt');
+    }
+});*/

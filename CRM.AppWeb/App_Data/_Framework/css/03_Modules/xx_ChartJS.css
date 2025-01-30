@@ -1,0 +1,223 @@
+﻿jtse-graphChartBar .shadow-box {
+    border: 1px solid #ffffff00;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.shadow-box .graph-chart-title {
+    margin-left: 10%;
+    color: #4682b4;
+}
+
+.shadow-box .graph-chart-legend {
+    display: inline-block;
+    justify-content: center;
+    margin-left: 20%;
+}
+
+.graph-chart-legend .legend {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+    .graph-chart-legend .legend .color-legend {
+        display: inline-block;
+        height: 15px;
+        width: 30px;
+        margin-right: 5px;
+        background-color: #4682b4;
+    }
+
+    .graph-chart-legend .legend .text-legend {
+        display: inline-block;
+        margin-right: 8px;
+    }
+/*#region .graph-chart-bar-vertical*/
+
+.shadow-box .graph-chart-bar-vertical {
+    width: 85%;
+    position: relative;
+    box-sizing: border-box;
+    margin-left: 10%;
+    margin-top: 50px
+}
+
+.graph-chart-bar-vertical .graph {
+    position: relative;
+}
+
+    .graph-chart-bar-vertical .graph > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .graph-chart-bar-vertical .graph .graph-x {
+        bottom: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+
+        .graph-chart-bar-vertical .graph .graph-x > li {
+            float: left;
+            font-size: 11px;
+        }
+
+    /*.graph-x > li:last-child {
+            margin-right: 0;
+        }*/
+
+    /*.graph-x > li > span {
+            display: block;
+            font-size: 16px;
+}*/
+
+    .graph-chart-bar-vertical .graph .graph-y {
+        position: absolute;
+        text-align: right;
+        width: 100%;
+    }
+
+        .graph-chart-bar-vertical .graph .graph-y > li {
+            border-top: 1px solid #CECECE;
+            display: block;
+            height: 50px;
+            width: 100%;
+        }
+
+            .graph-chart-bar-vertical .graph .graph-y > li > span {
+                display: block;
+                font-size: 11px;
+                margin: -10px 0 0 -52px;
+                padding: 0 10px;
+                width: 50px;
+            }
+
+    .graph-chart-bar-vertical .graph .bars {
+        padding: 0px;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+    }
+
+        .graph-chart-bar-vertical .graph .bars .group-bars {
+            display: block;
+            float: left;
+            height: 100%;
+            position: relative;
+        }
+
+            .graph-chart-bar-vertical .graph .bars .group-bars .bar {
+                border-radius: 0px;
+                bottom: 0;
+                cursor: pointer;
+                height: 0;
+                position: absolute;
+                text-align: center;
+                background-color: #4682b4;
+            }
+
+                .graph-chart-bar-vertical .graph .bars .group-bars .bar > span {
+                    display: none;
+                }
+/*#endregion*/
+
+
+/*#region .graph-chart-bar-horizontal*/
+.shadow-box .graph-chart-bar-horizontal {
+    width: 85%;
+    position: relative;
+    box-sizing: border-box;
+    margin-left: 10%;
+    margin-top: 50px
+}
+
+.graph-chart-bar-horizontal .graph {
+    position: relative;
+}
+
+    .graph-chart-bar-horizontal .graph > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .graph-chart-bar-horizontal .graph .graph-x {
+        bottom: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+
+        .graph-chart-bar-horizontal .graph .graph-x > li {
+            display: block;
+            width: 100%;
+            float: left;
+            font-size: 11px;
+            text-align: right;
+        }
+
+    .graph-chart-bar-horizontal .graph .graph-y {
+        position: absolute;
+        text-align: right;
+        width: 100%;
+    }
+
+        .graph-chart-bar-horizontal .graph .graph-y > li {
+            /*border-bottom: 1px solid #CECECE;*/
+            display: block;
+            height: 50px;
+            width: 100%;
+        }
+
+            .graph-chart-bar-horizontal .graph .graph-y > li > span {
+                display: block;
+                font-size: 11px;
+                margin: 0px 0 0 -100px;
+                padding: 0 10px;
+                width: 100px;
+            }
+
+    .graph-chart-bar-horizontal .graph .bars {
+        padding: 0px;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+        border:1px solid #cecece;
+        border-right:none;
+        border-bottom:none;
+        /*El heigh de bars depende de toda la data que venga*/
+    }
+
+        .graph-chart-bar-horizontal .graph .bars .grid-y {
+            position: absolute;
+            border-right: 1px solid #CECECE;
+            pointer-events: none;
+        }
+
+        .graph-chart-bar-horizontal .graph .bars .group-bars {
+            display: block;
+            float: left;
+            width: 100%;
+            position: relative;
+            border-bottom: 1px solid #cecece;
+        }
+
+            .graph-chart-bar-horizontal .graph .bars .group-bars .bar {
+                border-radius: 0px;
+                bottom: 0;
+                cursor: pointer;
+                height: 15px;
+                position: absolute;
+                text-align: center;
+                background-color: #4682b4;
+            }
+
+                .graph-chart-bar-horizontal .graph .bars .group-bars .bar > span {
+                    color:white;
+                    display: none;
+                }
+
+/*#endregion*/

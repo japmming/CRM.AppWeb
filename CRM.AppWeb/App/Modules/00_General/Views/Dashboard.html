@@ -1,0 +1,318 @@
+﻿<style>
+    /*#region TOOLTIP*/
+    .dashboard .tooltip-btn {
+        background-color: transparent;
+        padding: 0px;
+        border: 1px solid transparent;
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    [data-tooltip] {
+        position: relative;
+        z-index: 6;
+        cursor: pointer;
+    }
+
+        [data-tooltip]:before,
+        [data-tooltip]:after {
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        [data-tooltip]:before {
+            position: absolute;
+            bottom: 150%;
+            left: 50%;
+            margin-bottom: 5px;
+            margin-left: -80px;
+            padding: 7px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background-color: #000;
+            background-color: hsla(0, 0%, 20%, 0.9);
+            color: #fff;
+            width: 150px;
+            content: attr(data-tooltip);
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+        [data-tooltip]:after {
+            position: absolute;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -5px;
+            width: 0;
+            border-top: 5px solid #000;
+            border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            content: " ";
+            font-size: 0;
+            line-height: 0;
+        }
+
+        [data-tooltip]:hover:before,
+        [data-tooltip]:hover:after {
+            visibility: visible;
+            opacity: 1;
+        }
+    /*#endregion*/
+
+</style>
+<style>
+    .card-Analytics {
+        margin-bottom: 30px !important;
+        box-shadow: 0 0.46875rem 2.1875rem rgb(4 9 20 / 3%), 0 0.9375rem 1.40625rem rgb(4 9 20 / 3%), 0 0.25rem 0.53125rem rgb(4 9 20 / 5%), 0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
+        border-width: 0;
+        transition: all .2;
+    }
+
+    .card-Analytics-header {
+        padding: .75rem 1.25rem;
+        margin-bottom: 0;
+        color: inherit;
+        background-color: #fff;
+        border-bottom: 1px solid rgba(26,54,126,0.125);
+        text-transform: uppercase;
+        color: rgba(13,27,62,0.7);
+        font-weight: bold;
+        font-size: .88rem;
+        display: flex;
+        align-items: center;
+        border-bottom-width: 1px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: .625rem;
+        height: 3.5rem;
+    }
+
+        .card-Analytics-header:first-child {
+            border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+        }
+
+    .card-Analytics-header-title {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        font-size: 1.1rem !important;
+        font-weight: 400 !important;
+        text-transform: capitalize !important;
+    }
+</style>
+<style>
+    .widget-content-right span {
+        transform: 1s;
+        transition: 1s;
+    }
+</style>
+<div class="page-content">
+    <div class="panel">
+        <div class="panel-body" style="padding-left:0px; padding-right:0px;">
+            <div class="dashboard form-horizontal" id="5">
+                <div class="row">
+                    <div class="col-xs-24 col-sm-12 col-md-12 col-lg-6">
+                        <div class="widget-chart bg-color-Tangerine">
+                            <div class="widget-chat-wrapper-outer">
+                                <div class="widget-chart-content">
+                                    <div class="widget-content-title">Asociados Activos</div>
+                                    <!--<div class="widget-content-left">
+                            <div class="widget-subheading">Número de Licencias</div>
+                        </div>-->
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers"><span id="SPN_DASHBORAD_ASOCACTIVOS"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-24 col-sm-12 col-md-12 col-lg-6">
+                        <div class="widget-chart bg-color-Mist">
+                            <div class="widget-chat-wrapper-outer">
+                                <div class="widget-chart-content">
+                                    <div class="widget-content-title">Asociados Activate</div>
+                                    <!--<div class="widget-content-left">
+                            <div class="widget-subheading">
+                                Nuevos registros
+                            </div>
+                        </div>-->
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers"><span id="SPN_DASHBORAD_ASOCACTIVAT"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-24 col-sm-12 col-md-12 col-lg-6">
+                        <div class="widget-chart bg-color-Blue">
+                            <div class="widget-chat-wrapper-outer">
+                                <div class="widget-chart-content">
+                                    <div class="widget-content-title">Prefijos Disponibles</div>
+                                    <!--<div class="widget-content-left">
+                            <div class="widget-subheading">Encuestas hechas por clientes</div>
+                        </div>-->
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers"><span id="SPN_DASHBORAD_PREFDISPONI"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-24 col-sm-12 col-md-12 col-lg-6">
+                        <div class="widget-chart bg-color-Mint">
+                            <div class="widget-chat-wrapper-outer">
+                                <div class="widget-chart-content">
+                                    <div class="widget-content-title">GTIN 13 </div>
+                                    <!--<div class="widget-content-left">
+                            <div class="widget-subheading">Ultima revisión de Reportes Seleccionados</div>
+                        </div>-->
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers"><span id="SPN_DASHBORAD_GTIN13"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-24">
+                        <div class="form-group">
+                            <div class="col-xs-24 col-sm-24 col-md-12 col-lg-8">
+                                <jtse-grid id="GRD_Dashboard_AsociadoCategoriaCantidad" style="font-size:12px;"></jtse-grid>
+                            </div>
+                            <div class="col-xs-24 col-sm-24 col-md-12 col-lg-16">
+                                <jtse-grid id="GRD_Dashboard_EmpresasFasesActivate" style="font-size:12px;"></jtse-grid>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-24">
+                        <div class="form-group">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <jtse-grid id="GRD_Dashboard_AsociadosxEjecutiva" style="font-size:12px;"></jtse-grid>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-24">
+                        <div class="form-group">
+                            <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+                                <jtse-grid id="GRD_Dashboard_AsociadosxEjecutiva_" style="font-size:12px;"></jtse-grid>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-24">
+                        <div class="form-group">
+                            <div class="col-xs-24 col-sm-24 col-md-12 col-lg-12">
+                                <jtse-grid id="GRD_Dashboard_IngresoXServicioAso" style="font-size:12px; display:block">
+                                    <div class="col-24">
+                                        <div class="grid-bottom">
+                                            <div class="scroll-x w-100">
+                                                <table class="grid w-100">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="bg-color-Mist" style="width: 50%" rowspan="2">INGRESOS POR SERVICIOS A ASOCIADOS</th>
+                                                            <th class="bg-color-Mist" style="width: 25%">Año</th>
+                                                            <th class="bg-color-Mist" style="width: 25%">
+                                                                <select class="form-control" id="CBO_Dashboard_IngresoXServicioAso_Año">
+                                                                </select>
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="bg-color-Mist">Mes</th>
+                                                            <th class="bg-color-Mist">
+                                                                <select class="form-control" id="CBO_Dashboard_IngresoXServicioAso_Mes">
+                                                                </select>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Inscripción de Empresa</th>
+                                                            <td></td>
+                                                            <td style="text-align: right">56,850</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Inscripción de Còdigos</th>
+                                                            <td></td>
+                                                            <td style="text-align: right">65,850</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Solicitudes de Archivo EPS</th>
+                                                            <td></td>
+                                                            <td style="text-align: right">3,105</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>TOTAL</th>
+                                                            <td></td>
+                                                            <td style="text-align: right">125,805</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </jtse-grid>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row">
+        <div class="col-xs-24 col-sm-24 col-md-12 col-lg-8">
+            <div class="icon-accordion">
+                <input type='checkbox' name="CHK_1" id="CHK_1">
+                <label for='CHK_1' id="ACC_1" class="accordion-label bg-color-Purple">
+                    <span class='icon fa fa-minus pull-right' id="spn_1"></span>
+                    <button class="tooltip-btn pull-right" data-tooltip="La diferencia es la resta entre el puntaje actual y el anterior">
+                        <i class="fa fa-info" style="color:#fff; font-size:20px;">&nbsp;&nbsp;</i>
+                    </button>
+                    Puntaje General
+                </label>
+                <div class='accordion-content' style="background-color: #fff">
+                    <jtse-grid id="GRD_PuntajeGeneral" style="font-size:12px;"></jtse-grid>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-24 col-sm-24 col-md-12 col-lg-16">
+            <div class="icon-accordion">
+                <input type='checkbox' name="CHK_2" id="CHK_2">
+                <label for='CHK_2' id="ACC_2" class="accordion-label bg-color-Teal">
+                    <span class='icon fa fa-minus pull-right' id="spn_2"></span>
+                    <button class="tooltip-btn pull-right" data-tooltip="La diferencia es la resta entre el puntaje actual y el anterior">
+                        <i class="fa fa-info" style="color:#fff; font-size:20px;">&nbsp;&nbsp;</i>
+                    </button>
+                    Puntaje General
+                </label>
+                <div class='accordion-content'>
+                    <jtse-grid id="GRD_PuntajeGeneral1"></jtse-grid>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-24 col-sm-24 col-md-12 col-lg-16">
+            <div class="icon-accordion">
+                <input type='checkbox' name="CHK_3" id="CHK_3" checked>
+                <label for="CHK_3" id="ACC_3" class="accordion-label bg-color-Gold">
+                    <span class="icon fa fa-plus pull-right" id="spn_3"></span>
+                    <button class="tooltip-btn pull-right" data-tooltip="La diferencia es la resta entre el puntaje actual y el anterior">
+                        <i class="fa fa-info" style="color:#fff;font-size:20px;">&nbsp;&nbsp;</i>
+                    </button>
+                    Prueba de neuvo titulo
+                </label>
+                <div class='accordion-content' style="background-color: #fff">
+                    <jtse-grid id="GRD_PuntajeGeneral2"></jtse-grid>
+                </div>
+            </div>
+        </div>
+    </div>-->
+            </div>
+        </div>
+    </div>
+</div>

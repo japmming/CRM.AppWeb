@@ -1,0 +1,193 @@
+﻿
+
+.panel-header .btn {
+    border: 1px solid #fff;
+}
+
+
+.btn-save, .btn-save-ico, .btn-search-advance, .btn-search-advance-ico, .btn-handrock, .btn-handrock-ico, .btn-eye-ico {
+    background-color: #2461aa !important;
+}
+
+.btn-copy-ico, .btn-copy {
+    background-color: #2461aa !important;
+}
+
+.btn-send-ico, .btn-send {
+    background-color: #2461aa !important;
+}
+
+.btn-calendar-ico, .btn-calendar {
+    background-color: #6ac6d2 !important;
+}
+
+.btn-check, .btn-check-ico {
+    background-color: #2461aa !important;
+}
+
+.btn-delete, .btn-delete-ico, .btn-cancel, .btn-cancel-ico, .btn-close, .btn-close-ico {
+    background-color: #e2014d !important;
+}
+
+.btn-abandon, .btn-abandon-ico {
+    background-color: #6ac6d2 !important;
+}
+
+.btn-goback, .btn-goback-ico, .btn-plane-ico, .btn-plane, .btn-excel-ico, .btn-excel, .btn-handshake, .btn-handshake-ico {
+    background-color: #019272 !important;
+}
+
+.btn-search, .btn-search-ico, .btn-history, .btn-history-ico {
+    background-color: #96d045 !important;
+}
+
+.btn-reset, .btn-reset-ico, .btn-flag, .btn-flag-ico {
+    background-color: #fe9915 !important;
+}
+
+.btn-generate, .btn-generate-ico {
+    background-color: #019272 !important;
+}
+
+.btn-editar, .btn-editar-ico {
+    background-color: #6ac6d2 !important;
+}
+
+.btn-plus, .btn-plus-ico {
+    background-color: #6ac6d2 !important;
+}
+
+.btn-print, .btn-print-ico {
+    background-color: #2461aa !important;
+}
+
+.btn-arrow-right, .btn-arrow-right-ico {
+    background-color: #28A745 !important;
+}
+
+    .btn-send, .btn-copy, .btn-calendar, .btn-plane, .btn-excel, .btn-check, .btn-save, .btn-save-ico, .btn-delete, .btn-delete-ico, .btn-handrock, .btn-handrock-ico,
+    .btn-cancel, .btn-cancel-ico, .btn-close, .btn-close-ico,
+    .btn-abandon, .btn-abandon-ico, .btn-goback, .btn-goback-ico, .btn-plus, .btn-plus-ico, .btn-print, .btn-print-ico, .btn-handshake, .btn-handshake-ico,
+    .btn-search, .btn-search-ico, .btn-history, .btn-history-ico, .btn-reset, .btn-flag, .btn-generate, .btn-editar, .btn-editar-ico,
+    .btn-send-ico, .btn-copy-ico, .btn-reset-ico, .btn-search-advance, .btn-search-advance-ico,
+    .btn-flag-ico, .btn-generate-ico, .btn-check-ico, .btn-plane-ico, .btn-excel-ico, .btn-calendar-ico, btn-editar-ico,
+    .btn-send-ico:hover, .btn-copy-ico:hover, .btn-calendar-ico:hover, .btn-plane-ico:hover, .btn-excel-ico:hover, .btn-check-ico:hover, .btn-save:hover, .btn-save-ico:hover, .btn-delete:hover, .btn-delete-ico:hover, .btn-handrock:hover, .btn-handrock-ico:hover,
+    .btn-send, .btn-copy, .btn-calendar:hover, .btn-plane:hover, .btn-excel:hover, .btn-cancel:hover, .btn-cancel-ico:hover, .btn-close:hover, .btn-close-ico:hover,
+    .btn-abandon:hover, .btn-abandon-ico:hover, .btn-goback:hover, .btn-goback-ico:hover, .btn-handshake:hover, .btn-handshake-ico:hover,
+    .btn-search:hover, .btn-search-ico:hover, .btn-history:hover, .btn-history-ico:hover,
+    .btn-reset:hover, .btn-reset-ico:hover, .btn-search-advance:hover, .btn-search-advance-ico:hover,
+    .btn-flag:hover, .btn-flag-ico:hover,
+    .btn-generate:hover, .btn-generate-ico:hover,
+    .btn-editar:hover, .btn-editar-ico:hover,
+    .btn-plus:hover, .btn-plus-ico:hover,
+    .btn-print:hover, .btn-print-ico:hover,
+    .btn-arrow-right, .btn-arrow-right:hover, .btn-arrow-right-ico, .btn-arrow-right-ico:hover,
+    .btn-eye-ico, .btn-eye-ico:hover {
+        color: #fff;
+        outline-color: transparent !important;
+    }
+
+        .btn-send-ico:before, .btn-copy-ico:before, .btn-calendar-ico:before, .btn-plane-ico:before, .btn-excel-ico:before, .btn-check-ico:before, .btn-save-ico:before, .btn-cancel-ico:before, .btn-close-ico:before,
+        .btn-abandon-ico:before, .btn-delete-ico:before, .btn-goback-ico:before, .btn-handshake-ico:before, .btn-handrock-ico:before,
+        .btn-search-ico:before, .btn-history-ico:before, .btn-reset-ico:before,
+        .btn-flag-ico:before, .btn-plus-ico:before, .btn-print-ico:before,
+        .btn-search-advance-ico:before, .btn-generate-ico:before, .btn-editar-ico:before,
+        .btn-arrow-right-ico:before, .btn-eye-ico:before {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .btn-save-ico:before {
+            content: "\f0c7\0000a0\0000a0";
+        }
+
+        .btn-cancel-ico:before, .btn-close-ico:before, .btn-abandon-ico:before {
+            content: "\f00d\0000a0\0000a0";
+        }
+
+        .btn-delete-ico:before {
+            content: "\f014\0000a0\0000a0";
+        }
+
+        .btn-goback-ico:before {
+            content: "\f112\0000a0\0000a0";
+        }
+
+        .btn-search-ico:before {
+            content: "\f002\0000a0\0000a0";
+        }
+
+        .btn-search-advance-ico:before {
+            content: "\f00e\0000a0\0000a0";
+        }
+
+        .btn-history-ico:before {
+            content: "\f1da\0000a0\0000a0";
+        }
+
+        .btn-reset-ico:before {
+            content: "\f12d\0000a0\0000a0";
+        }
+
+        .btn-flag-ico:before {
+            content: "\f11d\0000a0\0000a0";
+        }
+
+        .btn-generate-ico:before {
+            content: "\f055\0000a0\0000a0";
+        }
+
+        .btn-check-ico:before {
+            content: "\f00c\0000a0\0000a0";
+        }
+
+        .btn-plane-ico:before {
+            content: "\f072\0000a0\0000a0";
+        }
+
+        .btn-excel-ico:before {
+            content: "\f1c3\0000a0\0000a0";
+        }
+
+        .btn-calendar-ico:before {
+            content: "\f073\0000a0\0000a0";
+        }
+
+        .btn-copy-ico:before {
+            content: "\f0c5\0000a0\0000a0";
+        }
+
+        .btn-send-ico:before {
+            content: "\f003\0000a0\0000a0";
+        }
+
+        .btn-editar-ico:before {
+            content: "\f040\0000a0\0000a0";
+        }
+
+        .btn-plus-ico:before {
+            content: "\f067\0000a0\0000a0";
+        }
+
+        .btn-print-ico:before {
+            content: "\f02f\0000a0\0000a0";
+        }
+
+        .btn-handshake-ico:before {
+            content: "\f2b5\0000a0\0000a0";
+        }
+
+        .btn-handrock-ico:before {
+            content: "\f255\0000a0\0000a0";
+        }
+
+        .btn-arrow-right-ico:before {
+            content: "\f061";
+        }
+
+        .btn-eye-ico:before {
+            content: "\f06e\0000a0\0000a0";
+        }

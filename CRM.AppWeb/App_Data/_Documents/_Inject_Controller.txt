@@ -1,0 +1,21 @@
+﻿define([$appName,  //module
+		"xxxxx" //namespace
+], function (module, namespace, args) {
+	"use strict";
+	var service = function ($service, $http) {
+		$service.Servicio = function (item) {
+			return $http({
+        		method: 'post',
+        		data: item,
+        		url: "controlador/metodo"
+        	});
+		};
+	};
+	var controller = function ($scope, $service, $layout) {
+		$scope.init = function () {
+
+		};
+	};
+	controller.$inject = ['$scope', '$service', '$["Layout"]'];
+	module.controller(namespace, controller, service);
+});

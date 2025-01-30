@@ -1,0 +1,108 @@
+﻿.black {
+    color: black !important;
+}
+
+.white {
+    color: #fff !important;
+}
+
+.bg-dark-blue {
+    background-color: #2461aa !important;
+}
+.bg-dark-orange {
+    background-color: #f26334 !important;
+}
+.bg-color-base {
+    background-color: rgb(70,130,180) !important;
+    color: #fff !important;
+}
+
+.bg-color-Raspberry {
+    background-color: #f05587 !important;
+    color: #fff !important;
+}
+
+.bg-color-Purple {
+    background-color: #bf83b9 !important;
+    color: #fff !important;
+}
+
+.bg-color-Lavender {
+    background-color: #af96d4 !important;
+    color: #fff !important;
+}
+
+.bg-color-Slate {
+    background-color: #89aadb !important;
+    color: #fff !important;
+}
+
+.bg-color-Sky {
+    background-color: #00b6de !important;
+    color: #fff !important;
+}
+
+.bg-color-Mist {
+    background-color: #8db9ca !important;
+    color: #fff !important;
+}
+
+.bg-color-Teal {
+    background-color: #22bcb9 !important;
+    color: #fff !important;
+}
+
+.bg-color-Mint {
+    background-color: #71b790 !important;
+    color: #fff !important;
+}
+
+.bg-color-Grass {
+    background-color: #7ac143 !important;
+    color: #fff !important;
+}
+
+.bg-color-Forest {
+    background-color: #00b74f !important;
+    color: #fff !important;
+}
+
+.bg-color-Olive {
+    background-color: #9dbb68 !important;
+    color: #fff !important;
+}
+
+.bg-color-Lime {
+    background-color: #c1d82f !important;
+    color: #fff !important;
+}
+
+.bg-color-Gold {
+    background-color: #c4b000 !important;
+    color: #fff !important;
+}
+
+.bg-color-Peach {
+    background-color: #fbb034 !important;
+    color: #fff !important;
+}
+
+.bg-color-Tangerine {
+    background-color: #ff8200 !important;
+    color: #fff !important;
+}
+
+.bg-color-Honey {
+    background-color: #b78b20 !important;
+    color: #fff !important;
+}
+
+.bg-color-Terracotta {
+    background-color: #d3875f !important;
+    color: #fff !important;
+}
+
+.bg-color-Blue {
+    background-color: #002c6c !important;
+    color: #fff !important;
+}

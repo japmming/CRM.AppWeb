@@ -1,0 +1,26 @@
+﻿Ejemplo de Modal (Estructura)
+
+HTML5
+**********************
+<div id="ID" class="jtse-modal">
+	<span>Hola</span>					/*Aquí va el contenido del modal*/
+</div>
+
+JAVASCRIPT
+**********************
+$$modal('ID').create({
+	Width: 'lg',						/*Ancho*/
+	Style: 'height:95%;',				/*Estilo*/
+	Title: 'Prueba',					/*Título del modal*/
+	TopColor: 'f1f1f1'					/*Color del BorderTop*/
+	ButtonNames: ['Salir'],				/*Etiqueta de los botones inferiores*/
+	ButtonClass: ['bg-dark-blue'],		/*Clase de los botones*/
+	FnActions: ['Cerrar'],				/*Nombre funciones: $scope.('Nombre de función')*/
+	FnClose: 'Cerrar2'					/*Nombre de función: $scope.('Nombre de función')*/
+	Namespace: namespace				/*Namespace del controlador*/
+});
+
+
+$$modal('ID').show();					/*Mostrar Modal*/
+$$modal('ID').hide();					/*Ocultar Modal*/
+$$modal().center();						/*Centrar Modal aplicado para el evento onresize*/

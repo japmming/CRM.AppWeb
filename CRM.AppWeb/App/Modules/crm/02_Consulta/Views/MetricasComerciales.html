@@ -1,0 +1,126 @@
+﻿<div class="page-content">
+    <div class="panel">
+        <header class="panel-header">
+            <h3 class="panel-title">Metricas Comerciales</h3>
+        </header>
+
+        <div class="panel-body">
+            <div class="form-horizontal" data-container="frmLeadsLST">
+                <div class="form-horizontal" data-container="frmLeadsLST">
+
+                    <div class="col-sm-24">
+                        <div class="row" style="margin-bottom:6px;">
+                            <div class="col-sm-24">
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-2">
+                                        <label id="lbl_LeadsLST_Asociado" class="control-label">Fch. Inicio (*) :</label>
+
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" role="checkbox">
+                                                <input type="checkbox" style="width: 13px" class="checkbox-inline" id="CHK_FECHA_INICIO" />
+                                            </span>
+                                            <input type="text" id="txt_FECHA_INICIO" class="form-control validate-date" placeholder="dd/mm/yyyy" disabled>
+                                            <span id="dpt_FECHA_INICIO" class="input-group-btn" role="calendar">
+                                                <button class="btn" type="button">
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        <label id="lbl_LeadsLST_Asociado" class="control-label">Fch. Final (*) :</label>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" role="checkbox">
+                                                <input type="checkbox" style="width: 13px" class="checkbox-inline" id="CHK_FECHA_FINAL" />
+                                            </span>
+                                            <input type="text" id="txt_FECHA_FINAL" class="form-control validate-date" placeholder="dd/mm/yyyy" disabled>
+                                            <span id="dpt_FECHA_FINAL" class="input-group-btn" role="calendar">
+                                                <button class="btn" type="button">
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        <label class="control-label text-left">Campaña: </label>
+                                    </div>
+
+                                    <div class="col-sm-3 ">
+                                        <select class="form-control required col-md-24" id="cbo_LeadsNombre_Campania">
+                                            <option value="">Seleccione</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-1 ">
+                                        <label class="control-label text-left">Evento: </label>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <select class="form-control required col-md-24" id="cbo_LeadsNombre_Evento">
+                                            <option value="">Seleccione</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-2">
+                                        <button class="btn btn-search-ico" id="btn_Buscar">Buscar</button>
+                                    </div>
+
+
+                                </div>
+                                
+                                
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-24">
+                                <div class="form-group">
+                                    <jtse-grid id="grd_Metricas"></jtse-grid>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<jtse-modal id="mdl_Reasignar_Usuario">
+    <div class="row">
+        <style>
+            .form-horizontal .control-label {
+                text-align: left;
+            }
+        </style>
+        <div class="col-sm-24 form-horizontal" data-container="FRM_MDL_Reasignar_Usuario">
+
+            <div class="form-group">
+                <div class="col-sm-24">
+                    <label class="control-label col-sm-24">Total de leads a reasignar : <span id="SPN_TOTAL_REASIGNADO"></span></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-18">
+                    <label class="control-label col-sm-6">Usuarios :</label>
+                    <!--<div class="col-sm-24">-->
+                        <select class="form-control col-sm-14" id="CBO_MDLUSUARIOS" />
+                    <!--</div>-->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</jtse-modal>

@@ -1,0 +1,95 @@
+﻿.dialog {
+    position: fixed;
+    z-index: 1200;
+    padding-top: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.fade {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.dialog-content {
+    background-color: white;
+    width: 350px;
+    padding: 0;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+.dialog-header {
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+    background-color: #fafafa;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.dialog-body {
+    padding: 20px;
+    position: relative;
+    display: flex;
+}
+
+.dialog-footer {
+    border-top: 1px solid #eee;
+    padding: 10px;
+    background-color: #fafafa;
+    border-radius: 0px 0px 5px 5px;
+    text-align: right;
+}
+
+.btn-cancel-dialog {
+    background-color: #e61c1c !important;
+    color: white;
+}
+
+.btn-ok-dialog {
+    margin-right: 10px;
+    background-color: #056bb3;
+    color: white;
+}
+
+.dialog-message {
+    width: 100%;
+    margin-left: 20px;
+    align-self: center;
+}

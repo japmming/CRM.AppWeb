@@ -1,0 +1,306 @@
+﻿<div class="page-content">
+    <div class="panel">
+        <header class="panel-header" id="hdr_LeadsLST_Titulo">
+            <div>
+                <h3 class="panel-title" id="LeadsCUD_panelTitle">Lista histórica de leads</h3>
+            </div>
+        </header>
+        <div class="panel-body">
+            <div class="form-horizontal" data-container="frmLeadsLST">
+                <div class="col-sm-24">
+                    <div class="row" style="padding:0px 40px; ">
+                        <div class="col-sm-24" style="text-align:center">
+                            <div class="form-group">
+
+                                <div id="div_MDL_LeadsCUD_CreadoPor">
+                                    <label class="col-md-2 control-label text-left">Creado por:</label>
+                                    <input class="form-control col-md-5" id="txt_MDL_LeadsCUD_CreadoPor" type="text" disabled>
+                                </div>
+
+                                <div id="div_MDL_LeadsCUD_FechaRegistro">
+                                    <div class="col-sm-3">
+                                        <label  class="control-label">Fecha Registro (*) :</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" id="txt_MDL_LeadsCUD_Fecha" class="form-control required validate-date" placeholder="dd/mm/yyyy">
+                                            <span id="dpt_FECHA_REGISTRO" class="input-group-btn" role="calendar">
+                                                <button class="btn" type="button">
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </span>
+                                            <input class="form-control " id="txt_MDL_LeadsCUD_hraRegistro" style="resize:none" type="time" step="1" min="00:00" max="23:59:59" pattern="[0-2][0-9]:[0-5][0-9]">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div id="div_MDL_LeadsCUD_Estado">
+                                    <label class="col-md-3 control-label text-center">Estado:</label>
+                                    <input class="form-control col-md-5" id="txt_MDL_LeadsCUD_Estado" type="text" disabled>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <h2 class="text-center MDL_sectionTitle">Datos personales</h2>
+                            <div class="form-group">
+                                <label class="control-label text-left">DNI:</label><br />
+                                <div class="input-group">
+                                    <input class="form-control required col-md-24" id="txt_MDL_LeadsCUD_DNI" type="text" maxlength="8">
+                                    <span id="btn_MDL_LeadsCUD_DNI" class="input-group-btn" role="search">
+                                        <button class="btn" type="button" tabindex="-1">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Nombres:</label><br />
+                                <input class="form-control required col-md-24" id="txt_MDL_LeadsCUD_Nombres" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Apellidos:</label><br />
+                                <input class="form-control required col-md-24" id="txt_MDL_LeadsCUD_Apellidos" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Edad :</label><br />
+                                <input class="form-control validate-dig-number col-md-24" id="txt_MDL_LeadsCUD_Edad" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Pais:</label><br />
+                                <select id="cbo_MDL_LeadsCUD_Pais" class="form-control col-md-24"></select>
+                            </div>
+                            <div class="form-group" id="DIV_DEP">
+                                <label class="control-label text-left">Departamento:</label><br />
+                                <select id="cbo_MDL_LeadsCUD_Departamento" class="form-control col-md-24"></select>
+                            </div>
+                            <div class="form-group" id="DIV_PROV">
+                                <label class="control-label text-left">Provincia:</label><br />
+                                <select id="cbo_MDL_LeadsCUD_Provincia" class="form-control col-md-24"></select>
+                            </div>
+                            <div class="form-group" id="DIV_DIS">
+                                <label class="control-label text-left">Distrito:</label><br />
+                                <select id="cbo_MDL_LeadsCUD_Distrito" class="form-control col-md-24"></select>
+                            </div>
+                            <div class="form-group"  id="DIV_DESC_PAIS"style="display:none">
+                                <label class="control-label text-left">Descripcion</label><br />
+                                <div class="col-md-24" style="padding:0px 0px;">
+                                    <textarea class="form-control" id="txt_MDL_LeadsCUD_DESC_PAIS" maxlength="500"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 col-sm-offset-1">
+                            <h2 class="text-center MDL_sectionTitle">Datos de contacto</h2>
+                            <div class="form-group">
+                                <label class="control-label text-left">Teléfono o celular</label><br />
+                                <div class="input-group">
+                                    <input class="form-control validate-dig-number required col-md-24" id="txt_MDL_LeadsCUD_TlfCelular" maxlength="50" type="text">
+                                    <span id="btn_MDL_LeadsCUD_TLF" class="input-group-btn" role="search">
+                                        <button class="btn" type="button" tabindex="-1">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Correo electrónico</label><br />
+                                <input class="form-control required validate-mail col-md-24" id="txt_MDL_LeadsCUD_Correo" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">RUC</label><br />
+                                <input class="form-control   col-md-10" id="txt_MDL_LeadsCUD_RUC" maxlength="11" type="text">
+                                
+                                <label id="lbl_MDL_LeadsCUD_ESTADO" style="margin:0px 20px 0px 20px;display:none"></label>
+                                <label id="lbl_MDL_LeadsCUD_CONDICION" style="margin:0px 20px 0px 20px;display:none"></label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="control-label text-left">Razon Social</label><br />
+                                <input class="form-control   col-md-24" id="txt_MDL_LeadsCUD_RSocial" type="text">
+                            </div>
+
+
+                            <h2 class="text-center MDL_sectionTitle">Interés</h2>
+                            <div class="form-group">
+                                <label class="control-label text-left">Interés</label><br />
+                                <select id="cbo_MDL_LeadsCUD_Interes" class="form-control col-md-24"></select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Modalidad</label><br />
+                                <div class="col-md-24" style="padding:0px 0px;">
+                                    <textarea class="form-control" id="txt_MDL_LeadsCUD_Modalidad" maxlength="250"></textarea>
+                                </div>
+                            </div>
+                            <div style="display: none" class="form-group" id="div_form">
+                                <label class="control-label text-left">Formulario:</label>
+                                <input class="form-control col-md-24" id="txt_MDL_LeadsCUD_Formulario" type="text" disabled>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 col-sm-offset-1">
+                            <h2 class="text-center MDL_sectionTitle">Datos del lead</h2>
+                            <div class="form-group">
+                                <label class="control-label text-left">Nombre de la campaña</label><br />
+                                <select class="form-control required col-md-24" id="cbo_MDL_LeadsCUD_Campania"></select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Nombre de evento</label><br />
+                                <select class="form-control required col-md-24" id="cbo_MDL_LeadsCUD_Evento">
+                                    <option value="">Seleccione</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Canal</label><br />
+                                <select class="form-control col-md-24" id="cbo_MDL_LeadsCUD_Canal"></select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Asignar a</label><br />
+                                <select class="form-control col-md-24" id="cbo_MDL_LeadsCUD_AsignarA"></select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label text-left">Asistió</label><br />
+                                <select class="form-control col-md-24" id="cbo_MDL_LeadsCUD_Asistio"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-24">
+                            <div class="form-group">
+                                <div class="col-md-5 col-sm-20 col-md-offset-20 text-right" style="padding: 0px 0px;">
+                                    <button class="btn btn-save-ico col-md-9" id="btn_MDL_LeadsCUD_Guardar" style="display: none; margin: 10px 5px 10px 5px" >Guardar</button>
+
+                                    <button class="btn btn-cancel-ico col-md-9" id="btn_MDL_LeadsCUD_Cancelar" style="display: none; margin: 10px 5px 10px 5px " >Cancelar</button>
+
+                                    <button class="btn btn-goback-ico col-md-18 " id="btn_MDL_LeadsCUD_Volver" style="display: none; margin: 10px 5px 10px 5px ">Volver</button>
+                                </div>   
+                            </div>
+                            <br />
+                        </div>
+                        <div id="divContenedorComentarios">
+                            <div class="col-md-24">
+                                <div class="form-group">
+                                    <h2 class="control-label text-left col-sm-3">Comentarios</h2>
+                                    <div class="col-md-5 col-md-offset-16 text-right">
+                                        <button class="btn btn-save-ico " id="btn_MDL_LeadsCUD_GuardarComentario" style="display: none">Agregar comentario</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-16 " style="border: 3px solid #DEDEDE; ">
+                                <div class="form-group">
+                                    <div id="div_MDL_LeadsCUD_Comentarios" style="margin: 10px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<jtse-modal id="MDL_LeadsCUD_Comentario">
+    <div class="row">
+        <div class="col-md-24">
+            <div class="form-horizontal" data-container="FRM_MDL_LeadsCUD">
+                <div class="col-md-24">
+                    <div class="row">
+                        <div class="col-md-24">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Fecha * :</label>
+                                <!--<input class="form-control col-md-7" id="txt_MDL_LeadsCUD_CreadoPor" type="text">-->
+                                <div class="col-md-8" style="padding: 0px 0px;">
+                                    <div class="input-group">
+                                        <input type="text" id="txt_MDL_LeadsCUD_fchComentario" class="form-control validate-date required"  placeholder="dd/mm/yyyy">
+                                        <span id="dpt_MDL_LeadsCUD_fchComentario" class="input-group-btn" role="calendar">
+                                            <button class="btn" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="col-md-3 col-md-offset-1 control-label text-left">Estado * :</label>
+                                <!--<input class="form-control col-md-7" id="txt_MDL_LeadsCUD_CreadoPor" type="text">-->
+                                <select class="form-control col-md-8 required" id="cbo_MDL_LeadsCUD_ComentarioEstado"  type="text"></select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Acción * :</label>
+                                <select class="form-control col-md-8 required" id="cbo_MDL_LeadsCUD_ComentarioAccion"  type="text"></select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Notas * :</label>
+                                <div class="col-md-20" style="padding:0px 0px;">
+                                    <textarea class="form-control required" id="txt_MDL_LeadsCUD_ComentarioNota" maxlength="250"></textarea>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group" id="div_MDL_LeadsCUD_CHK_Recordatorio" style="display:block;">
+                                <label class="col-md-6 control-label text-left">Programar recordatorio</label>
+                                <!--<input class="form-control col-md-7" id="txt_MDL_LeadsCUD_CreadoPor" type="text">-->
+                                <div class="col-md-4" style="padding-left: 0px">
+                                    <div class="slideThree" id="DIV_MDL_LeadsCUD_ProgramRecordatorio">
+                                        <input type="checkbox" value="1" id="chk_MDL_LeadsCUD_ProgramRecordatorio" />
+                                        <label for="chk_MDL_LeadsCUD_ProgramRecordatorio"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="div_MDL_LeadsCUD_Recordatorio" style="display:none;">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label text-left">Fecha/Hora * :</label>
+                                    <!--<input class="form-control col-md-7" id="txt_MDL_LeadsCUD_RecodatorioFCH" type="text">-->
+                                    <div class="col-md-5" style="padding: 0px 0px;">
+                                        <div class="input-group">
+                                            <input type="text" id="txt_MDL_LeadsCUD_fchRecordatorio" class="form-control validate-date "  placeholder="dd/mm/yyyy">
+                                            <span id="dpt_MDL_LeadsCUD_fchComentario" class="input-group-btn" role="calendar">
+                                                <button class="btn" type="button">
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <input class="form-control col-md-3 " id="txt_MDL_LeadsCUD_hraRecordatorio" style="resize:none" type="time" step="3600">
+
+                                    <label class="col-md-4 col-md-offset-1 control-label text-left">Avisarme * :</label>
+                                    <select class="form-control col-md-7" id="cbo_MDL_LeadsCUD_RecordatorioAvisarme"  type="text"></select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label text-left">Acción * :</label>
+                                    <select class="form-control col-md-8" id="cbo_MDL_LeadsCUD_RecordatorioAccion"  type="text"></select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label text-left">Comentarios :</label>
+                                    <div class="col-md-20" style="padding:0px 0px;">
+                                        <textarea class="form-control" id="txt_MDL_LeadsCUD_RecordatorioComentario"  maxlength="250"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</jtse-modal>
+
+<jtse-modal id="mdl_Verificar_DNI">
+    <div class="row">
+        <style>
+            .form-horizontal .control-label {
+                text-align: left;
+            }
+        </style>
+        
+        <div class="form-group">
+            <div class="col-sm-24">
+                <jtse-grid id="grd_VerificarDNI" class="col-sm-24"></jtse-grid>
+            </div>
+        </div>
+
+    </div>
+
+</jtse-modal>

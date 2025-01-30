@@ -1,0 +1,308 @@
+﻿<style>
+    .MDL_sectionTitle {
+        /*margin: 10px 0px;*/
+    }
+</style>
+<style>
+    .span-Contactar {
+        background-color: rgba(255, 160, 0, 0.12);
+        color: rgb(255, 160, 0);
+         font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*display: table-row-group;*/
+        /*font-size: 14px;*/
+    }
+
+    .span-Seguimiento {
+        background-color: rgba(3, 169, 244, 0.12);
+        color: rgb(3, 169, 244);
+        /*display: table-row-group;*/
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*font-size: 14px;*/
+    }
+
+    .span-No_contesta {
+        background-color: rgba(253, 216, 53, 0.12);
+        color: rgb(253, 216, 53);
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*display: table-row-group;*/
+        /*font-size: 14px;*/
+    }
+
+    .span-No_accesible {
+        background-color: rgba(244, 67, 54, 0.12);
+        color: rgb(244, 67, 54);
+        /*display: table-row-group;*/
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*font-size: 14px;*/
+    }
+
+    .span-No_interesado {
+        background-color: rgba(244, 67, 54, 0.12);
+        color: rgb(244, 67, 54);
+        /*display: table-row-group;*/
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*font-size: 14px;*/
+    }
+
+    .span-Volver_llamar {
+        background-color: rgba(255, 160, 0, 0.12);
+        color: rgb(255, 160, 0);
+        /*display: table-row-group;*/
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*font-size: 14px;*/
+    }
+
+    .span-Interesado {
+        background-color: rgba(67, 160, 71, 0.12);
+        color: rgb(67, 160, 71);
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*display: table-row-group;*/
+        /*font-size: 14px;*/
+    }
+
+    .span-Hot {
+        background-color: rgba(67, 160, 71, 0.12);
+        color: rgb(67, 160, 71);
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*display: table-row-group;*/
+        /*font-size: 14px;*/
+    }
+
+    .span-Postulante {
+        background-color: rgba(67, 160, 71, 0.12);
+        color: rgb(67, 160, 71);
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*display: table-row-group;*/
+        /*font-size: 14px;*/
+    }
+
+    .span-Matriculado {
+        background-color: rgba(67, 160, 71, 0.12);
+        color: rgb(67, 160, 71);
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*display: table-row-group;*/
+        /*font-size: 14px;*/
+    }
+
+    .span-Cursos_programas {
+        background-color: rgba(244, 67, 54, 0.12);
+        color: rgb(244, 67, 54);
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*display: table-row-group;*/
+        /*font-size: 14px;*/
+    }
+
+    .span-Default {
+        background-color: rgba(255, 160, 0, 0.12);
+        color: rgb(255, 160, 0);
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*display: table-row-group;*/
+        /*font-size: 14px;*/
+    }
+</style>
+<div class="page-content">
+    <div class="panel">
+        <header class="panel-header" id="hdr_LeadsLST_Titulo">
+            <div>
+                <h3 class="panel-title">Lista histórica de leads <span id="title"></span></h3>
+            </div>
+        </header>
+        <div class="panel-body">
+            <div class="form-horizontal" data-container="frmLeadsLST">
+                <div class="col-sm-24">
+                    <div class="row">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-24">
+                            <div class="form-group">
+
+                                <div class="col-sm-3">
+                                    <label id="lbl_LeadsLST_Asociado" class="control-label">Fecha inicio (*) :</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" role="checkbox">
+                                            <input type="checkbox" style="width: 13px" class="checkbox-inline" id="CHK_FECHA_INICIO" />
+                                        </span>
+                                        <input type="text" id="txt_FECHA_INICIO" class="form-control validate-date" placeholder="dd/mm/yyyy" disabled>
+                                        <span id="dpt_FECHA_INICIO" class="input-group-btn" role="calendar">
+                                            <button class="btn" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label id="lbl_LeadsLST_Asociado" class="control-label">Fecha final (*) :</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" role="checkbox">
+                                            <input type="checkbox" style="width: 13px" class="checkbox-inline" id="CHK_FECHA_FINAL" />
+                                        </span>
+                                        <input type="text" id="txt_FECHA_FINAL" class="form-control validate-date" placeholder="dd/mm/yyyy" disabled>
+                                        <span id="dpt_FECHA_FINAL" class="input-group-btn" role="calendar">
+                                            <button class="btn" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button class="btn btn-search-ico" id="btn_Buscar">Buscar</button>
+                                </div>
+
+                                <div class="col-sm-7 " style="padding: 0 30px 15px 0; display:none" id="DIV_RE">
+                                    <button id="BTN_REG_EV" class="btn btn-help pull-right"><i class="fa fa-arrow-left"></i> Regresar</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-24">
+                            <div class="form-group">
+                                <jtse-grid id="grd_LeadsLST"></jtse-grid>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<jtse-modal id="MDL_LeadsCUD">
+    <div class="row">
+        <view view-name="VW-MDL_LeadsCUD"></view>
+    </div>
+</jtse-modal>
+
+<jtse-modal id="mdl_Asignar_Asociado">
+    <div class="row">
+        <div class="col-sm-24 form-horizontal" data-container="FRM_MDL_Asignar_Asociado">
+            <div class="col-sm-24">
+                <label class="control-label col-sm-24">Asesores :</label>
+                <div class="col-sm-24">
+                    <select class="form-control required" id="CBO_MDLAsesores"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+</jtse-modal>
+
+
+
+<!--<jtse-modal id="MDL_LeadsCUD">
+    <div class="row">
+        <div class="col-md-24">
+            <div class="form-horizontal" data-container="FRM_MDL_LeadsCUD">
+                <div class="col-md-24">
+                    <div class="row">
+                        <div class="col-md-24">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Creado por:</label>
+                                <input class="form-control col-md-7" id="txt_MDL_LeadsCUD_CreadoPor" type="text" disabled>
+                            </div>
+                            <h2 class="text-center MDL_sectionTitle">Datos personales</h2>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">DNI:</label>
+                                <input class="form-control required col-md-7" id="txt_MDL_LeadsCUD_DNI" type="text">
+
+                                <label class="col-md-3  col-md-offset-2 control-label text-left">Nombres:</label>
+                                <input class="form-control required col-md-7" id="txt_MDL_LeadsCUD_Nombres" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Apellidos:</label>
+                                <input class="form-control required col-md-7" id="txt_MDL_LeadsCUD_Apellidos" type="text">
+
+                                <label class="col-md-3  col-md-offset-2 control-label text-left">Edad :</label>
+                                <input class="form-control validate-dig-number col-md-7" id="txt_MDL_LeadsCUD_Edad" type="text">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Departamento:</label>
+                                <select id="cbo_MDL_LeadsCUD_Departamento" class="form-control col-md-7"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-24">
+                            <br />
+                            <h2 class="text-center MDL_sectionTitle">Datos de contacto</h2>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Telefono o celular :</label>
+                                <input class="form-control validate-dig-number required col-md-7" id="txt_MDL_LeadsCUD_TlfCelular" type="text">
+
+                                <label class="col-md-3  col-md-offset-2 control-label text-left">Correo electrónico:</label>
+                                <input class="form-control required col-md-7" id="txt_MDL_LeadsCUD_Correo" type="text">
+                            </div>
+                            <br />
+                            <h2 class="text-center MDL_sectionTitle">Interés</h2>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Interés :</label>
+                                <select id="cbo_MDL_LeadsCUD_Interes" class="form-control col-md-7"></select>
+
+                                <label class="col-md-3  col-md-offset-2 control-label text-left">Modalidad :</label>
+                                <textarea class="form-control col-md-7" id="txt_MDL_LeadsCUD_Modalidad"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-24">
+                            <br />
+                            <h2 class="text-center MDL_sectionTitle">Datos del lead</h2>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Campaña:</label>
+                                <select class="form-control required col-md-7" id="cbo_MDL_LeadsCUD_Campania"></select>
+
+                                <label class="col-md-3  col-md-offset-2 control-label text-left">Evento:</label>
+                                <select class="form-control required col-md-7" id="cbo_MDL_LeadsCUD_Evento">
+                                    <option value="">Seleccione</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Canal:</label>
+                                <select class="form-control col-md-7" id="cbo_MDL_LeadsCUD_Canal"></select>
+
+                                <label class="col-md-3  col-md-offset-2 control-label text-left">Asignar a:</label>
+                                <select class="form-control col-md-7" id="cbo_MDL_LeadsCUD_AsignarA"></select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-left">Asistió:</label>
+                                <select class="form-control col-md-7" id="cbo_MDL_LeadsCUD_Asistio"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</jtse-modal>-->

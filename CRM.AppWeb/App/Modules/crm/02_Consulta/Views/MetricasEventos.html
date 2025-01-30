@@ -1,0 +1,57 @@
+﻿<div class="page-content">
+    <div class="panel">
+        <header class="panel-header">
+            <h3 class="panel-title">Metrica de Eventos <span id="titulo"></span></h3>
+        </header>
+        <div class="row" style="padding:20px 30px; ">
+            <div class="col-sm-12 ">
+                <div class="form-group">
+                    <div class="col-sm-4 ">
+                        <label class="control-label text-left">Campaña: </label>
+                    </div>
+                    
+                    <div class="col-sm-12 ">
+                        <select class="form-control required col-md-24" id="cbo_LeadsNombre_Campania"></select>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        <label class="control-label text-left">Evento: </label>
+                    </div>
+                    <div class="col-sm-12">
+                        <select class="form-control required col-md-24" id="cbo_LeadsNombre_Evento">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding:10px 30px">
+            <div class="col-sm-8">
+                
+                    <div class="col-sm-12">
+                        <label class="control-label text-left">Matriculados por Campaña: </label>
+                    </div>
+
+                    <div class="col-sm-5 ">
+                        <span id="spnMatriculadosCAMPANIA">0.00%</span>
+                    </div>
+                
+            </div>
+        </div>
+            
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-24">              
+                    <jtse-grid id="grd_Metricas_Eventos"></jtse-grid>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

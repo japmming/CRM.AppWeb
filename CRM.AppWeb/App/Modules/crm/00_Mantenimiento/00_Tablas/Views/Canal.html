@@ -1,0 +1,40 @@
+﻿<div class="page-content">
+    <div class="panel">
+        <header class="panel-header">
+            <h3 class="panel-title">Listado de Canales</h3>
+        </header>
+        <div class="panel-body">
+            <jtse-grid id="grd_Canal" class="col-sm-24"></jtse-grid>
+        </div>
+    </div>
+</div>
+
+
+<jtse-modal id="mdl_Editar_Canal">
+
+    <style>
+        .form-horizontal .control-label {
+            text-align: left;
+        }
+    </style>
+    <div class="row">
+        <div class="col-sm-24 form-horizontal" data-container="FRM_MDL_Canal">
+
+            <div class="form-group">
+                <div class="col-sm-24">
+                    <label class="control-label col-sm-24">Código :</label>
+                    <div class="col-sm-24">
+                        <input type="text" class="form-control  " readonly id="TXT_MDLCANAL_ID" maxlength="120" />
+                    </div>
+                </div>
+                <div class="col-sm-24">
+                    <label class="control-label col-sm-24">Descripción :</label>
+                    <div class="col-sm-24">
+                        <input type="text" class="form-control required" id="TXT_MDLCANAL_DESC" maxlength="120" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</jtse-modal>

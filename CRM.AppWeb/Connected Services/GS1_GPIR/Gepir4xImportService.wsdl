@@ -1,0 +1,1571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:tns="http://gepir4x.import.ws.gs1.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="urn:gs1:gepir:response_header:xsd:4" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="Gepir4xImportService" targetNamespace="http://gepir4x.import.ws.gs1.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" xmlns:tns="urn:gs1:shared:shared_common:xsd:3" targetNamespace="urn:gs1:shared:shared_common:xsd:3" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="GS1CodeType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalConsignmentIdentificationTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalIndividualAssetIdentificationTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalLogisticUnitIdentificationTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalPartyIdentificationTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalReturnableAssetIdentificationTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalServiceRelationIdentificationTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalShipmentIdentificationTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalTradeItemIdentificationTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AllowanceChargeTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="BarCodeTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="CommunicationChannelCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ContactTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="CountryCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="CountrySubdivisionCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="CurrencyCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="DateFormatCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="EntityTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="FinancialAccountNumberTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="FinancialRoutingNumberTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="IncotermsCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="LanguageCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="MeasurementUnitCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="NutrientTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="PartyRoleCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="PaymentMethodCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="PaymentTermsTypeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="TaxCategoryCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="TemperatureMeasurementUnitCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="TimeMeasurementUnitCodeType">
+        <xs:simpleContent>
+          <xs:extension base="tns:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="city" type="xs:string" />
+          <xs:element minOccurs="0" name="cityCode" type="xs:string" />
+          <xs:element minOccurs="0" name="countryCode" type="tns:CountryCodeType" />
+          <xs:element minOccurs="0" name="countyCode" type="xs:string" />
+          <xs:element minOccurs="0" name="crossStreet" type="xs:string" />
+          <xs:element minOccurs="0" name="currencyOfPartyCode" type="tns:CurrencyCodeType" />
+          <xs:element minOccurs="0" name="languageOfThePartyCode" type="tns:LanguageCodeType" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="pOBoxNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="postalCode" type="xs:string" />
+          <xs:element minOccurs="0" name="provinceCode" type="xs:string" />
+          <xs:element minOccurs="0" name="state" type="xs:string" />
+          <xs:element minOccurs="0" name="streetAddressOne" type="xs:string" />
+          <xs:element minOccurs="0" name="streetAddressTwo" type="xs:string" />
+          <xs:element minOccurs="0" name="streetAddressThree" type="xs:string" />
+          <xs:element minOccurs="0" name="geographicalCoordinates" type="tns:GeographicalCoordinatesType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeographicalCoordinatesType">
+        <xs:sequence>
+          <xs:element name="latitude" type="xs:string" />
+          <xs:element name="longitude" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalPartyIdentificationType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="additionalPartyIdentificationTypeCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ContactType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contactTypeCode" type="tns:ContactTypeCodeType" />
+          <xs:element minOccurs="0" name="personName" type="xs:string" />
+          <xs:element minOccurs="0" name="departmentName" type="xs:string" />
+          <xs:element minOccurs="0" name="jobTitle" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="responsibility" nillable="true" type="tns:Description70Type" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="communicationChannel" nillable="true" type="tns:CommunicationChannelType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="afterHoursCommunicationChannel" nillable="true" type="tns:CommunicationChannelType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Description70Type">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="CommunicationChannelType">
+        <xs:sequence>
+          <xs:element name="communicationChannelCode" type="tns:CommunicationChannelCodeType" />
+          <xs:element name="communicationValue" type="xs:string" />
+          <xs:element minOccurs="0" name="communicationChannelName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MeasurementType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="measurementUnitCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="SizeType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descriptiveSize" type="tns:Description80Type" />
+          <xs:element minOccurs="0" name="sizeCode" type="tns:SizeCodeType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Description80Type">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="SizeCodeType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="sizeCodeListCode" type="xs:string" use="required" />
+            <xs:attribute name="sizeCodeListDescription" type="xs:string" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+            <xs:attribute name="sizeCodeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalConsignmentIdentificationType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="additionalConsignmentIdentificationTypeCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalIndividualAssetIdentificationType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="additionalIndividualAssetIdentificationTypeCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalLogisticUnitIdentificationType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="additionalLogisticUnitIdentificationTypeCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalReturnableAssetIdentificationType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="additionalReturnableAssetIdentificationTypeCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalServiceRelationIdentificationType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="additionalServiceRelationIdentificationTypeCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalShipmentIdentificationType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="additionalShipmentIdentificationTypeCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalTradeItemClassificationCodeType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="additionalTradeItemClassificationCodeListCode" type="xs:string" use="required" />
+            <xs:attribute name="additionalTradeItemClassificationCodeListVersion" type="xs:string" />
+            <xs:attribute name="codeDescription" type="xs:string" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AdditionalTradeItemIdentificationType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="additionalTradeItemIdentificationTypeCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="AmountRangeType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="maximumAmount" type="tns:AmountType" />
+          <xs:element minOccurs="0" name="minimumAmount" type="tns:AmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AmountType">
+        <xs:simpleContent>
+          <xs:extension base="xs:float">
+            <xs:attribute name="currencyCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="CodeType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="codeDescription" type="xs:string" />
+            <xs:attribute name="codeListAgencyCode" type="xs:string" />
+            <xs:attribute name="codeListAgencyCodeListVersion" type="xs:string" />
+            <xs:attribute name="codeListAgencyName" type="xs:string" />
+            <xs:attribute name="codeListName" type="xs:string" />
+            <xs:attribute name="codeListURI" type="xs:string" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ColourCodeType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="colourCodeListCode" type="xs:string" use="required" />
+            <xs:attribute name="colourCodeListDescription" type="xs:string" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+            <xs:attribute name="colourCodeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ColourType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="colourCode" type="tns:ColourCodeType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="colourDescription" nillable="true" type="tns:Description80Type" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConsignmentIdentificationType">
+        <xs:sequence>
+          <xs:element name="ginc" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalConsignmentIdentification" nillable="true" type="tns:AdditionalConsignmentIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CurrencyExchangeRateInformationType">
+        <xs:sequence>
+          <xs:element name="currencyConversionFromCode" type="tns:CurrencyCodeType" />
+          <xs:element name="currencyConversionToCode" type="tns:CurrencyCodeType" />
+          <xs:element minOccurs="0" name="exchangeRate" type="xs:float" />
+          <xs:element minOccurs="0" name="exchangeRateDateTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DateOptionalTimeType">
+        <xs:sequence>
+          <xs:element name="date" type="xs:date" />
+          <xs:element minOccurs="0" name="time" type="xs:time" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DateTimeRangeType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="beginDate" type="xs:date" />
+          <xs:element minOccurs="0" name="beginTime" type="xs:time" />
+          <xs:element minOccurs="0" name="endDate" type="xs:date" />
+          <xs:element minOccurs="0" name="endTime" type="xs:time" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Description1000Type">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="Description200Type">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="Description2500Type">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="Description35Type">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="Description5000Type">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="Description500Type">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="languageCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="DimensionType">
+        <xs:sequence>
+          <xs:element name="depth" type="tns:MeasurementType" />
+          <xs:element name="height" type="tns:MeasurementType" />
+          <xs:element name="width" type="tns:MeasurementType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DocumentReferenceType">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:EntityIdentificationType">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="creationDateTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="revisionNumber" type="xs:positiveInteger" />
+              <xs:element minOccurs="0" name="lineItemNumber" type="xs:positiveInteger" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="EntityIdentificationType">
+        <xs:sequence>
+          <xs:element name="entityIdentification" type="xs:string" />
+          <xs:element minOccurs="0" name="contentOwner" type="tns:PartyIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartyIdentificationType">
+        <xs:sequence>
+          <xs:element name="gln" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalPartyIdentification" nillable="true" type="tns:AdditionalPartyIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TypedEntityIdentificationType">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:EntityIdentificationType">
+            <xs:sequence>
+              <xs:element name="entityTypeCode" type="tns:EntityTypeCodeType" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ExtensionType">
+        <xs:sequence>
+          <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##other" processContents="lax" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FinancialAccountType">
+        <xs:sequence>
+          <xs:element name="financialAccountNumber" type="xs:string" />
+          <xs:element name="financialAccountNumberTypeCode" type="tns:FinancialAccountNumberTypeCodeType" />
+          <xs:element minOccurs="0" name="financialAccountName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FinancialRoutingNumberType">
+        <xs:sequence>
+          <xs:element name="financialRoutingNumber" type="xs:string" />
+          <xs:element name="financialRoutingNumberTypeCode" type="tns:FinancialRoutingNumberTypeCodeType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GPCAttributeType">
+        <xs:sequence>
+          <xs:element name="gpcAttributeTypeCode" type="xs:string" />
+          <xs:element name="gpcAttributeValueCode" type="xs:string" />
+          <xs:element minOccurs="0" name="gpcAttributeTypeName" type="xs:string" />
+          <xs:element minOccurs="0" name="gpcAttributeValueName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IdentifierType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="identificationSchemeAgencyCode" type="xs:string" />
+            <xs:attribute name="identificationSchemeAgencyCodeCodeListVersion" type="xs:string" />
+            <xs:attribute name="identificationSchemeAgencyName" type="xs:string" />
+            <xs:attribute name="identificationSchemeName" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="IndividualAssetIdentificationType">
+        <xs:sequence>
+          <xs:element name="giai" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalIndividualAssetIdentification" nillable="true" type="tns:AdditionalIndividualAssetIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LogisticUnitIdentificationType">
+        <xs:sequence>
+          <xs:element name="sscc" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalLogisticUnitIdentification" nillable="true" type="tns:AdditionalLogisticUnitIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MeasurementRangeType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="maximumMeasurement" type="tns:MeasurementType" />
+          <xs:element minOccurs="0" name="minimumMeasurement" type="tns:MeasurementType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MultiDescription70Type">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="description" type="tns:Description70Type" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PaymentTimePeriodType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dateDue" type="xs:date" />
+          <xs:element minOccurs="0" name="dayOfMonthDue" type="xs:gDay" />
+          <xs:element minOccurs="0" name="timePeriodDue" type="tns:TimeMeasurementType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TimeMeasurementType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="timeMeasurementUnitCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="QuantityRangeType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="maximumQuantity" type="tns:QuantityType" />
+          <xs:element minOccurs="0" name="minimumQuantity" type="tns:QuantityType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QuantityType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="measurementUnitCode" type="xs:string" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="RangeType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="maximum" type="xs:float" />
+          <xs:element minOccurs="0" name="maximumType" type="xs:string" />
+          <xs:element minOccurs="0" name="minimum" type="xs:float" />
+          <xs:element minOccurs="0" name="minimumType" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponsibleAgencyCodeType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="codeDescription" type="xs:string" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ReturnableAssetIdentificationType">
+        <xs:sequence>
+          <xs:element name="grai" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalReturnableAssetIdentification" nillable="true" type="tns:AdditionalReturnableAssetIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ServiceRelationIdentificationType">
+        <xs:sequence>
+          <xs:element name="gsrn" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalServiceRelationIdentification" nillable="true" type="tns:AdditionalServiceRelationIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ShipmentIdentificationType">
+        <xs:sequence>
+          <xs:element name="gsin" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalShipmentIdentification" nillable="true" type="tns:AdditionalShipmentIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StringRangeType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="maximumValue" type="xs:string" />
+          <xs:element minOccurs="0" name="minimumValue" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TargetMarketType">
+        <xs:sequence>
+          <xs:element name="targetMarketCountryCode" type="tns:CountryCodeType" />
+          <xs:element minOccurs="0" name="targetMarketSubdivisionCode" type="tns:CountrySubdivisionCodeType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TradeItemClassificationType">
+        <xs:sequence>
+          <xs:element name="gpcCategoryCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalTradeItemClassificationCode" nillable="true" type="tns:AdditionalTradeItemClassificationCodeType" />
+          <xs:element minOccurs="0" name="gpcCategoryName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="gpcAttribute" nillable="true" type="tns:GPCAttributeType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TemperatureMeasurementType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="temperatureMeasurementUnitCode" type="xs:string" use="required" />
+            <xs:attribute name="codeListVersion" type="xs:string" />
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="TemperatureRangeType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="maximumTemperature" type="tns:TemperatureMeasurementType" />
+          <xs:element minOccurs="0" name="minimumTemperature" type="tns:TemperatureMeasurementType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TradeItemIdentificationType">
+        <xs:sequence>
+          <xs:element name="gtin" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalTradeItemIdentification" nillable="true" type="tns:AdditionalTradeItemIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:response_header="urn:gs1:gepir:response_header:xsd:4" xmlns:tns="urn:gs1:gepir:response_header:xsd:4" xmlns:ns1="urn:gs1:gepir:gepir_common:xsd:4" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gepir:response_header:xsd:4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="urn:gs1:gepir:gepir_common:xsd:4" />
+      <xs:element name="responseHeader" type="tns:ResponseHeaderType" />
+      <xs:complexType name="ResponseHeaderType">
+        <xs:sequence>
+          <xs:element name="responderGLN" type="xs:string" />
+          <xs:element name="numberOfHits" type="xs:nonNegativeInteger" />
+          <xs:element name="gepirReturnCode" type="ns1:GepirReturnCodeType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="responseHeaderType" nillable="true" type="tns:ResponseHeaderType" />
+    </xs:schema>
+    <xs:schema xmlns:gepir_party_ext="urn:gs1:gepir:gepir_party_ext:xsd:4" xmlns:tns="urn:gs1:gepir:gepir_party_ext:xsd:4" xmlns:ns1="urn:gs1:gepir:gepir_party:xsd:4" targetNamespace="urn:gs1:gepir:gepir_party_ext:xsd:4" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="urn:gs1:gepir:gepir_party:xsd:4" />
+      <xs:element name="partyDatalineExtension" type="tns:PartyDataLineExtensionType" />
+      <xs:complexType name="PartyDataLineExtensionType">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ns1:PartyDataLineType">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+              <xs:element minOccurs="0" name="registryValue" type="xs:string" />
+              <xs:element minOccurs="0" name="registryValueType" type="xs:string" />
+              <xs:element minOccurs="0" name="gcpType" type="xs:string" />
+              <xs:element name="stateOfMember" type="xs:string" />
+              <xs:element name="dateOfState" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:gepir_party="urn:gs1:gepir:gepir_party:xsd:4" xmlns:ns1="urn:gs1:shared:shared_common:xsd:3" xmlns:tns="urn:gs1:gepir:gepir_party:xsd:4" xmlns:ns2="urn:gs1:gepir:gepir_common:xsd:4" targetNamespace="urn:gs1:gepir:gepir_party:xsd:4" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="urn:gs1:shared:shared_common:xsd:3" />
+      <xs:import namespace="urn:gs1:gepir:gepir_common:xsd:4" />
+      <xs:element name="gepirParty" type="tns:GepirPartyType" />
+      <xs:complexType name="PartyDataLineType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gS1CompanyPrefix" type="xs:string" />
+          <xs:element minOccurs="0" name="lastChangeDate" type="xs:dateTime" />
+          <xs:element name="partyDataLanguage" type="ns1:LanguageCodeType" />
+          <xs:element name="returnCode" type="ns2:GepirReturnCodeType" />
+          <xs:element minOccurs="0" name="address" type="ns1:AddressType" />
+          <xs:element minOccurs="0" name="gepirRequestedKey" type="ns2:GepirRequestedKeyType" />
+          <xs:element minOccurs="0" name="responderSpecificData" type="ns2:ResponderSpecificDataType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="gepirItemExternalFileLink" nillable="true" type="ns2:GepirItemExternalFileLinkType" />
+          <xs:element minOccurs="0" name="gS1CompanyPrefixLicensee" type="ns2:GepirPartyInformationType" />
+          <xs:element minOccurs="0" name="gS1KeyLicensee" type="ns2:GepirPartyInformationType" />
+          <xs:element name="informationProvider" type="ns2:GepirPartyInformationType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="contact" nillable="true" type="ns1:ContactType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GepirPartyType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="partyDataLine" type="tns:PartyDataLineType" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:tns="urn:gs1:gepir:gepir_item_ext:xsd:4" xmlns:ns1="urn:gs1:gepir:gepir_item:xsd:4" xmlns:gepir_item_ext="urn:gs1:gepir:gepir_item_ext:xsd:4" targetNamespace="urn:gs1:gepir:gepir_item_ext:xsd:4" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="urn:gs1:gepir:gepir_item:xsd:4" />
+      <xs:element name="itemDatalineExtension" type="gepir_item_ext:ItemDataLineExtensionType" />
+      <xs:complexType name="ItemDataLineExtensionType">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ns1:ItemDataLineType">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:gepir_item="urn:gs1:gepir:gepir_item:xsd:4" xmlns:ns1="urn:gs1:shared:shared_common:xsd:3" xmlns:tns="urn:gs1:gepir:gepir_item:xsd:4" xmlns:ns2="urn:gs1:gepir:gepir_common:xsd:4" targetNamespace="urn:gs1:gepir:gepir_item:xsd:4" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="urn:gs1:shared:shared_common:xsd:3" />
+      <xs:import namespace="urn:gs1:gepir:gepir_common:xsd:4" />
+      <xs:element name="gepirItem" type="tns:GepirItemType" />
+      <xs:complexType name="ItemDataLineType">
+        <xs:sequence>
+          <xs:element name="itemDataLanguage" type="ns1:LanguageCodeType" />
+          <xs:element minOccurs="0" name="lastChangeDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="netContent" nillable="true" type="ns1:MeasurementType" />
+          <xs:element name="returnCode" type="ns2:GepirReturnCodeType" />
+          <xs:element minOccurs="0" name="tradeItemUnitDescriptor" type="ns2:TradeItemUnitDescriptorCodeType" />
+          <xs:element minOccurs="0" name="itemName" type="xs:string" />
+          <xs:element minOccurs="0" name="brandName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="tradeItemClassification" nillable="true" type="ns2:TradeItemClassificationType" />
+          <xs:element name="gepirRequestedKey" type="ns2:GepirRequestedKeyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="responderSpecificData" nillable="true" type="ns2:ResponderSpecificDataType" />
+          <xs:element name="informationProvider" type="ns2:GepirPartyInformationType" />
+          <xs:element minOccurs="0" name="manufacturer" type="ns2:GepirPartyInformationType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="requestedItem" nillable="true" type="ns2:GepirItemExternalFileLinkType" />
+          <xs:element minOccurs="0" name="size" type="ns1:SizeType" />
+          <xs:element minOccurs="0" name="nextLowerLevelTradeItemInformation" type="tns:NextLowerLevelTradeItemInformationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NextLowerLevelTradeItemInformationType">
+        <xs:sequence>
+          <xs:element name="quantityOfChildren" type="xs:nonNegativeInteger" />
+          <xs:element name="totalQuantityOfNextLowerLevelTradeItem" type="xs:nonNegativeInteger" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GepirItemType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="itemDataLine" type="tns:ItemDataLineType" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:tns="urn:gs1:gepir:gepir_common:xsd:4" xmlns:ns1="urn:gs1:shared:shared_common:xsd:3" xmlns:gepir_common="urn:gs1:gepir:gepir_common:xsd:4" targetNamespace="urn:gs1:gepir:gepir_common:xsd:4" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="urn:gs1:shared:shared_common:xsd:3" />
+      <xs:complexType name="GepirReturnCodeType">
+        <xs:simpleContent>
+          <xs:extension base="ns1:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="GepirRequestedKeyType">
+        <xs:sequence>
+          <xs:element name="requestedKeyCode" type="gepir_common:RequestedKeyCodeType" />
+          <xs:element name="requestedKeyValue" type="xs:string" />
+          <xs:element minOccurs="0" name="requestedLanguage" type="ns1:LanguageCodeType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestedKeyCodeType">
+        <xs:simpleContent>
+          <xs:extension base="ns1:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="ResponderSpecificDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="responderSpecificData" type="xs:string" />
+          <xs:element minOccurs="0" name="responderSpecificDataUse" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GepirItemExternalFileLinkType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fileFormatName" type="gepir_common:FileFormatCodeType" />
+          <xs:element minOccurs="0" name="uniformResourceIdentifier" type="xs:anyURI" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FileFormatCodeType">
+        <xs:simpleContent>
+          <xs:extension base="ns1:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="GepirPartyInformationType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalPartyIdentification" nillable="true" type="ns1:AdditionalPartyIdentificationType" />
+          <xs:element minOccurs="0" name="gln" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="partyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="partyRole" nillable="true" type="ns1:PartyRoleCodeType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="partyContainment" nillable="true" type="gepir_common:PartyContainmentType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartyContainmentType">
+        <xs:sequence>
+          <xs:element name="partyChild" type="gepir_common:GepirPartyInformationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TradeItemUnitDescriptorCodeType">
+        <xs:simpleContent>
+          <xs:extension base="ns1:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="TradeItemClassificationType">
+        <xs:sequence>
+          <xs:element name="gpcCategoryCode" type="xs:string" />
+          <xs:element minOccurs="0" name="gpcCategoryDefinition" type="xs:string" />
+          <xs:element minOccurs="0" name="gpcCategoryName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalTradeItemClassification" nillable="true" type="gepir_common:AdditionalTradeItemClassificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalTradeItemClassificationType">
+        <xs:sequence>
+          <xs:element name="additionalTradeItemClassificationSystemCode" type="gepir_common:AdditionalTradeItemClassificationCodeListCodeType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalTradeItemClassificationCodeListCodeType">
+        <xs:simpleContent>
+          <xs:extension base="ns1:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="EntryPointType">
+        <xs:sequence>
+          <xs:element name="gepirVersionCode" type="gepir_common:GepirVersionCodeType" />
+          <xs:element name="routerURL" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GepirVersionCodeType">
+        <xs:simpleContent>
+          <xs:extension base="ns1:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="GepirCountryType">
+        <xs:sequence>
+          <xs:element name="countryCode" type="ns1:CountryCodeType" />
+          <xs:element maxOccurs="unbounded" name="countryName" type="ns1:Description70Type" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GepirInformationType">
+        <xs:sequence>
+          <xs:element name="gepirClientURI" type="xs:string" />
+          <xs:element name="gepirStatusCode" type="gepir_common:GepirStatusCodeType" />
+          <xs:element name="gepirVersionCode" type="gepir_common:GepirVersionCodeType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="supportedLanguage" nillable="true" type="ns1:LanguageCodeType" />
+          <xs:element maxOccurs="unbounded" name="gepirServer" type="gepir_common:GepirServerType" />
+          <xs:element name="gepirRouter" type="gepir_common:GepirRouterType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GepirStatusCodeType">
+        <xs:simpleContent>
+          <xs:extension base="ns1:GS1CodeType" />
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="GepirServerType">
+        <xs:sequence>
+          <xs:element name="serverCountry" type="ns1:CountryCodeType" />
+          <xs:element name="serverGLN" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GepirRouterType">
+        <xs:sequence>
+          <xs:element name="routerGLN" type="xs:string" />
+          <xs:element name="routerIPAddress" type="xs:string" />
+          <xs:element name="routerSubnetMask" type="xs:string" />
+          <xs:element name="routerURL" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="legacyVersion" type="gepir_common:EntryPointType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="gepirRouterTechnicalContact" nillable="true" type="ns1:ContactType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberOrganisationType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="countryAdministered" type="ns1:CountryCodeType" />
+          <xs:element name="lastChangeDate" type="xs:dateTime" />
+          <xs:element name="returnCode" type="gepir_common:GepirReturnCodeType" />
+          <xs:element name="url" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="gepirCountry" type="gepir_common:GepirCountryType" />
+          <xs:element name="informationProvider" type="gepir_common:GepirPartyInformationType" />
+          <xs:element maxOccurs="unbounded" name="prefixRange" type="gepir_common:PrefixRangeType" />
+          <xs:element name="gepirInformation" type="gepir_common:GepirInformationType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="contact" nillable="true" type="ns1:ContactType" />
+          <xs:element minOccurs="0" name="address" type="ns1:AddressType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PrefixRangeType">
+        <xs:sequence>
+          <xs:element name="prefixRangeHigh" type="xs:integer" />
+          <xs:element name="prefixRangeLow" type="xs:integer" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns1="urn:gs1:gepir:gepir_party_ext:xsd:4" xmlns:ns2="urn:gs1:gepir:gepir_item_ext:xsd:4" elementFormDefault="unqualified" targetNamespace="http://gepir4x.import.ws.gs1.org/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="urn:gs1:gepir:gepir_party_ext:xsd:4" />
+      <xs:import namespace="urn:gs1:gepir:gepir_item_ext:xsd:4" />
+      <xs:import namespace="http://www.w3.org/2005/05/xmlmime" />
+      <xs:element name="deleteItemsByGtinAndAdministeringMO" type="tns:deleteItemsByGtinAndAdministeringMO" />
+      <xs:element name="deleteItemsByGtinAndAdministeringMOResponse" type="tns:deleteItemsByGtinAndAdministeringMOResponse" />
+      <xs:element name="deletePartiesByAdministeringMOAndRegistryValueAndTypes" type="tns:deletePartiesByAdministeringMOAndRegistryValueAndTypes" />
+      <xs:element name="deletePartiesByAdministeringMOAndRegistryValueAndTypesResponse" type="tns:deletePartiesByAdministeringMOAndRegistryValueAndTypesResponse" />
+      <xs:element name="getItemImportStatus" type="tns:getItemImportStatus" />
+      <xs:element name="getItemImportStatusResponse" type="tns:getItemImportStatusResponse" />
+      <xs:element name="getPartyImportStatus" type="tns:getPartyImportStatus" />
+      <xs:element name="getPartyImportStatusResponse" type="tns:getPartyImportStatusResponse" />
+      <xs:element name="insertItems" type="tns:insertItems" />
+      <xs:element name="insertItemsResponse" type="tns:insertItemsResponse" />
+      <xs:element name="insertParties" type="tns:insertParties" />
+      <xs:element name="insertPartiesResponse" type="tns:insertPartiesResponse" />
+      <xs:element name="loadItemFromExcel" type="tns:loadItemFromExcel" />
+      <xs:element name="loadItemFromExcelMTOM" type="tns:loadItemFromExcelMTOM" />
+      <xs:element name="loadItemFromExcelMTOMResponse" type="tns:loadItemFromExcelMTOMResponse" />
+      <xs:element name="loadItemFromExcelResponse" type="tns:loadItemFromExcelResponse" />
+      <xs:element name="loadPartyFromExcel" type="tns:loadPartyFromExcel" />
+      <xs:element name="loadPartyFromExcelMTOM" type="tns:loadPartyFromExcelMTOM" />
+      <xs:element name="loadPartyFromExcelMTOMResponse" type="tns:loadPartyFromExcelMTOMResponse" />
+      <xs:element name="loadPartyFromExcelResponse" type="tns:loadPartyFromExcelResponse" />
+      <xs:element name="updateItems" type="tns:updateItems" />
+      <xs:element name="updateItemsResponse" type="tns:updateItemsResponse" />
+      <xs:element name="updateParties" type="tns:updateParties" />
+      <xs:element name="updatePartiesResponse" type="tns:updatePartiesResponse" />
+      <xs:element name="validateItemFromExcel" type="tns:validateItemFromExcel" />
+      <xs:element name="validateItemFromExcelMTOM" type="tns:validateItemFromExcelMTOM" />
+      <xs:element name="validateItemFromExcelMTOMResponse" type="tns:validateItemFromExcelMTOMResponse" />
+      <xs:element name="validateItemFromExcelResponse" type="tns:validateItemFromExcelResponse" />
+      <xs:element name="validatePartyFromExcel" type="tns:validatePartyFromExcel" />
+      <xs:element name="validatePartyFromExcelMTOM" type="tns:validatePartyFromExcelMTOM" />
+      <xs:element name="validatePartyFromExcelMTOMResponse" type="tns:validatePartyFromExcelMTOMResponse" />
+      <xs:element name="validatePartyFromExcelResponse" type="tns:validatePartyFromExcelResponse" />
+      <xs:complexType name="validateItemFromExcelMTOM">
+        <xs:sequence>
+          <xs:element xmime:expectedContentTypes="application/octet-stream" minOccurs="0" name="excel" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validateItemFromExcelMTOMResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deletePartiesByAdministeringMOAndRegistryValueAndTypes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="registryValueAndTypes" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deletePartiesByAdministeringMOAndRegistryValueAndTypesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validatePartyFromExcel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="excel" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validatePartyFromExcelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validatePartyFromExcelMTOM">
+        <xs:sequence>
+          <xs:element xmime:expectedContentTypes="application/octet-stream" minOccurs="0" name="excel" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validatePartyFromExcelMTOMResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertParties">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="partyDataLines" type="ns1:PartyDataLineExtensionType" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertPartiesResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="loadItemFromExcel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="excel" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loadItemFromExcelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteItemsByGtinAndAdministeringMO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="gtins" type="xs:string" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteItemsByGtinAndAdministeringMOResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPartyImportStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPartyImportStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="importStatus" type="tns:partyImportStatus" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="partyImportStatus">
+        <xs:sequence>
+          <xs:element name="phase" type="xs:int" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="layout" type="tns:partyLayout" />
+          <xs:element name="startedAtRow" type="xs:int" />
+          <xs:element name="currentRow" type="xs:int" />
+          <xs:element minOccurs="0" name="currentEndRow" type="xs:int" />
+          <xs:element name="currentNumberOfRowsBeingProcessed" type="xs:int" />
+          <xs:element name="batchSize" type="xs:int" />
+          <xs:element name="numberOfBatchesProcessed" type="xs:int" />
+          <xs:element name="totalNumberOfBatches" type="xs:int" />
+          <xs:element name="averageTimeElapsedPerBatchInMinutes" type="xs:float" />
+          <xs:element name="percentageCompleted" type="xs:float" />
+          <xs:element name="totalTimeElapsedInMinutes" type="xs:float" />
+          <xs:element name="totalTimeElapsedInMillis" type="xs:long" />
+          <xs:element name="currentNumberOfValidParties" type="xs:int" />
+          <xs:element name="currentNumberOfPartiesToBeSaved" type="xs:int" />
+          <xs:element name="currentNumberOfPartiesToBeUpdated" type="xs:int" />
+          <xs:element name="currentNumberOfPartiesToBeDeleted" type="xs:int" />
+          <xs:element name="currentNumberOfPartiesToBeUpdatedAtGlobalIndex" type="xs:int" />
+          <xs:element name="currentNumberOfPartiesToBeRegisteredAtGlobalIndex" type="xs:int" />
+          <xs:element name="numberOfPartiesSaved" type="xs:int" />
+          <xs:element name="numberOfPartiesUpdated" type="xs:int" />
+          <xs:element name="numberOfPartiesDeleted" type="xs:int" />
+          <xs:element name="numberOfPartiesUpdatedAtGlobalIndex" type="xs:int" />
+          <xs:element name="numberOfPartiesRegisteredAtGlobalIndex" type="xs:int" />
+          <xs:element name="totalNumberOfRows" type="xs:int" />
+          <xs:element name="totalNumberOfBlankRows" type="xs:int" />
+          <xs:element name="totalNumberOfValidRows" type="xs:int" />
+          <xs:element name="totalNumberOfRowsWithError" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="errors" nillable="true" type="tns:partyErrors" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="partyLayout">
+        <xs:sequence>
+          <xs:element name="attributeNameHeaderRow" type="xs:int" />
+          <xs:element name="mandatoryHeaderRow" type="xs:int" />
+          <xs:element name="valuesStartingRow" type="xs:int" />
+          <xs:element name="lastRowNum" type="xs:int" />
+          <xs:element name="lastColNum" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="partyErrors">
+        <xs:sequence>
+          <xs:element name="row" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="details" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateParties">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="partyDataLines" type="ns1:PartyDataLineExtensionType" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updatePartiesResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="loadPartyFromExcelMTOM">
+        <xs:sequence>
+          <xs:element xmime:expectedContentTypes="application/octet-stream" minOccurs="0" name="excel" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loadPartyFromExcelMTOMResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateItems">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="itemDataLines" type="ns2:ItemDataLineExtensionType" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateItemsResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="insertItems">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="itemDataLines" type="ns2:ItemDataLineExtensionType" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertItemsResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="validateItemFromExcel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="excel" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="validateItemFromExcelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getItemImportStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getItemImportStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="importStatus" type="tns:itemImportStatus" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemImportStatus">
+        <xs:sequence>
+          <xs:element name="phase" type="xs:int" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="layout" type="tns:itemLayout" />
+          <xs:element name="startedAtRow" type="xs:int" />
+          <xs:element name="currentRow" type="xs:int" />
+          <xs:element minOccurs="0" name="currentEndRow" type="xs:int" />
+          <xs:element name="currentNumberOfRowsBeingProcessed" type="xs:int" />
+          <xs:element name="batchSize" type="xs:int" />
+          <xs:element name="numberOfBatchesProcessed" type="xs:int" />
+          <xs:element name="totalNumberOfBatches" type="xs:int" />
+          <xs:element name="averageTimeElapsedPerBatchInMinutes" type="xs:float" />
+          <xs:element name="percentageCompleted" type="xs:float" />
+          <xs:element name="totalTimeElapsedInMinutes" type="xs:float" />
+          <xs:element name="totalTimeElapsedInMillis" type="xs:long" />
+          <xs:element name="currentNumberOfValidItems" type="xs:int" />
+          <xs:element name="currentNumberOfItemsToBeSaved" type="xs:int" />
+          <xs:element name="currentNumberOfItemsToBeUpdated" type="xs:int" />
+          <xs:element name="currentNumberOfItemsToBeDeleted" type="xs:int" />
+          <xs:element name="currentNumberOfItemsToBeUpdatedAtGlobalIndex" type="xs:int" />
+          <xs:element name="currentNumberOfItemsToBeRegisteredAtGlobalIndex" type="xs:int" />
+          <xs:element name="numberOfItemsSaved" type="xs:int" />
+          <xs:element name="numberOfItemsUpdated" type="xs:int" />
+          <xs:element name="numberOfItemsDeleted" type="xs:int" />
+          <xs:element name="numberOfItemsUpdatedAtGlobalIndex" type="xs:int" />
+          <xs:element name="numberOfItemsRegisteredAtGlobalIndex" type="xs:int" />
+          <xs:element name="totalNumberOfRows" type="xs:int" />
+          <xs:element name="totalNumberOfBlankRows" type="xs:int" />
+          <xs:element name="totalNumberOfValidRows" type="xs:int" />
+          <xs:element name="totalNumberOfRowsWithError" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="errors" nillable="true" type="tns:itemErrors" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemLayout">
+        <xs:sequence>
+          <xs:element name="attributeNameHeaderRow" type="xs:int" />
+          <xs:element name="mandatoryHeaderRow" type="xs:int" />
+          <xs:element name="valuesStartingRow" type="xs:int" />
+          <xs:element name="lastRowNum" type="xs:int" />
+          <xs:element name="lastColNum" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemErrors">
+        <xs:sequence>
+          <xs:element name="row" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="details" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loadItemFromExcelMTOM">
+        <xs:sequence>
+          <xs:element xmime:expectedContentTypes="application/octet-stream" minOccurs="0" name="excel" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loadItemFromExcelMTOMResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loadPartyFromExcel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="excel" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="administeringMO" type="xs:string" />
+          <xs:element minOccurs="0" name="sharedSecret" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loadPartyFromExcelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="statusKey" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="validatePartyFromExcelResponse">
+    <wsdl:part name="parameters" element="tns:validatePartyFromExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="deletePartiesByAdministeringMOAndRegistryValueAndTypesResponse">
+    <wsdl:part name="parameters" element="tns:deletePartiesByAdministeringMOAndRegistryValueAndTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateItemFromExcelMTOMResponse">
+    <wsdl:part name="parameters" element="tns:validateItemFromExcelMTOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="deletePartiesByAdministeringMOAndRegistryValueAndTypes">
+    <wsdl:part name="parameters" element="tns:deletePartiesByAdministeringMOAndRegistryValueAndTypes" />
+  </wsdl:message>
+  <wsdl:message name="loadItemFromExcelMTOMResponse">
+    <wsdl:part name="parameters" element="tns:loadItemFromExcelMTOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="validatePartyFromExcel">
+    <wsdl:part name="parameters" element="tns:validatePartyFromExcel" />
+  </wsdl:message>
+  <wsdl:message name="validatePartyFromExcelMTOM">
+    <wsdl:part name="parameters" element="tns:validatePartyFromExcelMTOM" />
+  </wsdl:message>
+  <wsdl:message name="loadItemFromExcel">
+    <wsdl:part name="parameters" element="tns:loadItemFromExcel" />
+  </wsdl:message>
+  <wsdl:message name="insertPartiesResponse">
+    <wsdl:part name="parameters" element="tns:insertPartiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPartyImportStatus">
+    <wsdl:part name="parameters" element="tns:getPartyImportStatus" />
+  </wsdl:message>
+  <wsdl:message name="validateItemFromExcelResponse">
+    <wsdl:part name="parameters" element="tns:validateItemFromExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePartiesResponse">
+    <wsdl:part name="parameters" element="tns:updatePartiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadItemFromExcelMTOM">
+    <wsdl:part name="parameters" element="tns:loadItemFromExcelMTOM" />
+  </wsdl:message>
+  <wsdl:message name="loadPartyFromExcel">
+    <wsdl:part name="parameters" element="tns:loadPartyFromExcel" />
+  </wsdl:message>
+  <wsdl:message name="loadPartyFromExcelMTOMResponse">
+    <wsdl:part name="parameters" element="tns:loadPartyFromExcelMTOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateItemFromExcelMTOM">
+    <wsdl:part name="parameters" element="tns:validateItemFromExcelMTOM" />
+  </wsdl:message>
+  <wsdl:message name="loadItemFromExcelResponse">
+    <wsdl:part name="parameters" element="tns:loadItemFromExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="validatePartyFromExcelMTOMResponse">
+    <wsdl:part name="parameters" element="tns:validatePartyFromExcelMTOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateItemsResponse">
+    <wsdl:part name="parameters" element="tns:updateItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getItemImportStatusResponse">
+    <wsdl:part name="parameters" element="tns:getItemImportStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPartyImportStatusResponse">
+    <wsdl:part name="parameters" element="tns:getPartyImportStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadPartyFromExcelResponse">
+    <wsdl:part name="parameters" element="tns:loadPartyFromExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertParties">
+    <wsdl:part name="parameters" element="tns:insertParties" />
+  </wsdl:message>
+  <wsdl:message name="deleteItemsByGtinAndAdministeringMO">
+    <wsdl:part name="parameters" element="tns:deleteItemsByGtinAndAdministeringMO" />
+  </wsdl:message>
+  <wsdl:message name="updateParties">
+    <wsdl:part name="parameters" element="tns:updateParties" />
+  </wsdl:message>
+  <wsdl:message name="loadPartyFromExcelMTOM">
+    <wsdl:part name="parameters" element="tns:loadPartyFromExcelMTOM" />
+  </wsdl:message>
+  <wsdl:message name="updateItems">
+    <wsdl:part name="parameters" element="tns:updateItems" />
+  </wsdl:message>
+  <wsdl:message name="insertItems">
+    <wsdl:part name="parameters" element="tns:insertItems" />
+  </wsdl:message>
+  <wsdl:message name="validateItemFromExcel">
+    <wsdl:part name="parameters" element="tns:validateItemFromExcel" />
+  </wsdl:message>
+  <wsdl:message name="deleteItemsByGtinAndAdministeringMOResponse">
+    <wsdl:part name="parameters" element="tns:deleteItemsByGtinAndAdministeringMOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResponseHeaderException">
+    <wsdl:part name="ResponseHeaderException" element="ns1:responseHeaderType" />
+  </wsdl:message>
+  <wsdl:message name="insertItemsResponse">
+    <wsdl:part name="parameters" element="tns:insertItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getItemImportStatus">
+    <wsdl:part name="parameters" element="tns:getItemImportStatus" />
+  </wsdl:message>
+  <wsdl:portType name="Gepir4xImportService">
+    <wsdl:operation name="validateItemFromExcelMTOM">
+      <wsdl:input name="validateItemFromExcelMTOM" message="tns:validateItemFromExcelMTOM" />
+      <wsdl:output name="validateItemFromExcelMTOMResponse" message="tns:validateItemFromExcelMTOMResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePartiesByAdministeringMOAndRegistryValueAndTypes">
+      <wsdl:input name="deletePartiesByAdministeringMOAndRegistryValueAndTypes" message="tns:deletePartiesByAdministeringMOAndRegistryValueAndTypes" />
+      <wsdl:output name="deletePartiesByAdministeringMOAndRegistryValueAndTypesResponse" message="tns:deletePartiesByAdministeringMOAndRegistryValueAndTypesResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="validatePartyFromExcel">
+      <wsdl:input name="validatePartyFromExcel" message="tns:validatePartyFromExcel" />
+      <wsdl:output name="validatePartyFromExcelResponse" message="tns:validatePartyFromExcelResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="validatePartyFromExcelMTOM">
+      <wsdl:input name="validatePartyFromExcelMTOM" message="tns:validatePartyFromExcelMTOM" />
+      <wsdl:output name="validatePartyFromExcelMTOMResponse" message="tns:validatePartyFromExcelMTOMResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="insertParties">
+      <wsdl:input name="insertParties" message="tns:insertParties" />
+      <wsdl:output name="insertPartiesResponse" message="tns:insertPartiesResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="loadItemFromExcel">
+      <wsdl:input name="loadItemFromExcel" message="tns:loadItemFromExcel" />
+      <wsdl:output name="loadItemFromExcelResponse" message="tns:loadItemFromExcelResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteItemsByGtinAndAdministeringMO">
+      <wsdl:input name="deleteItemsByGtinAndAdministeringMO" message="tns:deleteItemsByGtinAndAdministeringMO" />
+      <wsdl:output name="deleteItemsByGtinAndAdministeringMOResponse" message="tns:deleteItemsByGtinAndAdministeringMOResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="getPartyImportStatus">
+      <wsdl:input name="getPartyImportStatus" message="tns:getPartyImportStatus" />
+      <wsdl:output name="getPartyImportStatusResponse" message="tns:getPartyImportStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateParties">
+      <wsdl:input name="updateParties" message="tns:updateParties" />
+      <wsdl:output name="updatePartiesResponse" message="tns:updatePartiesResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="loadPartyFromExcelMTOM">
+      <wsdl:input name="loadPartyFromExcelMTOM" message="tns:loadPartyFromExcelMTOM" />
+      <wsdl:output name="loadPartyFromExcelMTOMResponse" message="tns:loadPartyFromExcelMTOMResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateItems">
+      <wsdl:input name="updateItems" message="tns:updateItems" />
+      <wsdl:output name="updateItemsResponse" message="tns:updateItemsResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="insertItems">
+      <wsdl:input name="insertItems" message="tns:insertItems" />
+      <wsdl:output name="insertItemsResponse" message="tns:insertItemsResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="validateItemFromExcel">
+      <wsdl:input name="validateItemFromExcel" message="tns:validateItemFromExcel" />
+      <wsdl:output name="validateItemFromExcelResponse" message="tns:validateItemFromExcelResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="getItemImportStatus">
+      <wsdl:input name="getItemImportStatus" message="tns:getItemImportStatus" />
+      <wsdl:output name="getItemImportStatusResponse" message="tns:getItemImportStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="loadItemFromExcelMTOM">
+      <wsdl:input name="loadItemFromExcelMTOM" message="tns:loadItemFromExcelMTOM" />
+      <wsdl:output name="loadItemFromExcelMTOMResponse" message="tns:loadItemFromExcelMTOMResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+    <wsdl:operation name="loadPartyFromExcel">
+      <wsdl:input name="loadPartyFromExcel" message="tns:loadPartyFromExcel" />
+      <wsdl:output name="loadPartyFromExcelResponse" message="tns:loadPartyFromExcelResponse" />
+      <wsdl:fault name="ResponseHeaderException" message="tns:ResponseHeaderException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Gepir4xImportServiceSoapBinding" type="tns:Gepir4xImportService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="validateItemFromExcelMTOM">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="validateItemFromExcelMTOM">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validateItemFromExcelMTOMResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deletePartiesByAdministeringMOAndRegistryValueAndTypes">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="deletePartiesByAdministeringMOAndRegistryValueAndTypes">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deletePartiesByAdministeringMOAndRegistryValueAndTypesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validatePartyFromExcel">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="validatePartyFromExcel">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validatePartyFromExcelResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validatePartyFromExcelMTOM">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="validatePartyFromExcelMTOM">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validatePartyFromExcelMTOMResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insertParties">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="insertParties">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertPartiesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="loadItemFromExcel">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="loadItemFromExcel">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="loadItemFromExcelResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteItemsByGtinAndAdministeringMO">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="deleteItemsByGtinAndAdministeringMO">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteItemsByGtinAndAdministeringMOResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPartyImportStatus">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getPartyImportStatus">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPartyImportStatusResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateParties">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="updateParties">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updatePartiesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="loadPartyFromExcelMTOM">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="loadPartyFromExcelMTOM">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="loadPartyFromExcelMTOMResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateItems">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="updateItems">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateItemsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insertItems">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="insertItems">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertItemsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateItemFromExcel">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="validateItemFromExcel">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validateItemFromExcelResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getItemImportStatus">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getItemImportStatus">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getItemImportStatusResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadItemFromExcelMTOM">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="loadItemFromExcelMTOM">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="loadItemFromExcelMTOMResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="loadPartyFromExcel">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="loadPartyFromExcel">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="loadPartyFromExcelResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResponseHeaderException">
+        <soap12:fault use="literal" name="ResponseHeaderException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Gepir4xImportService">
+    <wsdl:port name="Gepir4xImportServicePort" binding="tns:Gepir4xImportServiceSoapBinding">
+      <soap12:address location="https://gepir4ws.gs1.org:8585/gepir/services/Gepir4xImportServicePort" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

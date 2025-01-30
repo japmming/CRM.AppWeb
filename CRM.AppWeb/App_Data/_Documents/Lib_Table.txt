@@ -1,0 +1,41 @@
+﻿Ejemplo de Tabla (Estructura)
+
+HTML5
+**********************
+<jtse-grid id="ID"></jtse-grid>
+
+JAVASCRIPT
+**********************
+$$table('divDO_TableDonante').create({
+                Title: 'Título',
+                Headers: ['Columna 1', 'Columna 2', 'Columna 3', 'Columna 4', 'Columna 5'],		/*Nombres de columna*/
+                DataType: ['S', 'DE', 'D', 'N', 'B'],												/**/
+                DataTypeFilter: ['S', 'I', 'I', 'I', 'S'],										/**/
+                ShowColumns: [true, true, true, true, true],									/*Mostrar columnas*/
+				ShowColumnsExport: [true, true, true, true, true],								/*Mostrar columnas para exportar*/
+                Widths: [20, 20, 20, 20, 20],													/*Definir los anchos en porcentaje sobre el 90%*/
+                Indexs: [0, 1, 2, 3, 4, 5, 6],													/*Definir los índices / ordenamiento*/
+                Data: [],																		/*Pasar la data como matriz*/
+                New: true,																		/*Habilitar el botón nuevo (Por defecto es falso)*/
+                Edit: true,																		/*Habilitar el botón editar (Por defecto es falso)*/
+                Delete: true,																	/*Habilitar el botón eliminar (Por defecto es falso)*/
+                Export: true,																	/*Habilitar el botón exportar (Por defecto es falso)*/
+                ClassTable: 'col-sm-10',														/*Definir clases a nivel de tabla*/
+                EntriesPage: 5,																	/*Registros por página*/
+                RangePage: 5,																	/*Páginas por bloque*/
+                Separator: '¦',																	/*Tipo de separador*/
+                FnNew: 'fnNuew',																/*Nombre de la función del botón nuevo*/
+                FnEdit: 'fnEdit',																/*Nombre de la función del botón editar*/
+                FnDelete: 'fnDelete',															/*Nombre de la función del botón eliminar*/
+                FnActions: ['fnAction1', 'fnAction2'],											/*Funciones de los botones*/
+                Icons: ['icon-1', 'ico-2'],														/*Iconos de los botones*/
+                Scope: namespace,																/*Namespace del controlador*/
+                Lang: 'idiomaTabla',															/*Idioma a mostrarse*/
+                FnExtensions:['PruebaExtension']
+            });
+
+
+$scope.PruebaExtension=function(row, index){
+    console.log(row);
+    return 'Hola';
+};

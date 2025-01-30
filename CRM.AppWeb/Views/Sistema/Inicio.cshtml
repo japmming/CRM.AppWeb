@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="UTF-8" />
+    <title>NATCODEE</title>
+    <link href="~/App/Support/jtseStyles.min.css?v=@ViewBag.VersionApp" rel="stylesheet" />
+    <link rel="shortcut icon" type='image/x-icon' href="~/Resources/Images/crm.png?v=@ViewBag.VersionApp" />
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p>Esta usando un navegador antiguo. Por favor actualizar su navegador para mejor su experiencia</p>
+    <![endif]-->
+    <view-root key="LoginAccess"></view-root>
+    <script id="_jsLoad" charset="utf-8">
+		var _ = "@Html.Raw(ViewBag.Script)";
+    </script>
+    <script charset="utf-8" src="~/App/Support/jtseScripts.min.js?v=@ViewBag.VersionApp"></script>
+    <script charset="utf-8" src="~/App/Support/Extends/xlsx.full.min.js?v=@ViewBag.VersionApp"></script>
+</body>
+</html>

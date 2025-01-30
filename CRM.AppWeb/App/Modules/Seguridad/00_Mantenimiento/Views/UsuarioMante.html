@@ -1,0 +1,360 @@
+﻿<style>
+    /*.btn-file {
+        width: 20.83333333666667%;
+    }*/
+    .img-picture {
+        height: 191px;
+        width: 100%;
+    }
+
+    .img_usuario {
+        height: 191px;
+        width: 100%;
+    }
+
+    .span-Activo {
+        background-color: #7ac143;
+        color: white;
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*display: table-row-group;*/
+        /*font-size: 14px;*/
+    }
+
+    .span-Moroso {
+        background-color: #d92550;
+        color: white;
+        /*display: table-row-group;*/
+        font-weight: bold;
+        padding: 2px 12px 4px;
+        bottom: 0px;
+        /*font-size: 14px;*/
+    }
+</style>
+<style>
+    .lst-image figure {
+        width: 100%;
+        height: 204px;
+        margin: 0px auto;
+        padding: 0;
+        background: #fff;
+        overflow: hidden;
+        text-align: center;
+    }
+
+        .lst-image figure:hover + span {
+        }
+
+        .lst-image figure img {
+            width: auto;
+            height: 100%;
+            /*height: auto;*/
+            /*-webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;*/
+        }
+
+        .lst-image figure:hover img {
+            /*-webkit-transform: scale(1.3);
+            transform: scale(1.3);*/
+        }
+
+    .img-default {
+        width: auto;
+        cursor: pointer;
+        height: 100%;
+    }
+
+    .img-load {
+        height: 100%;
+        width: auto;
+        cursor: pointer;
+    }
+</style><!--Imágenes-->
+<style>
+    .slideThree {
+        width: 80px;
+        height: 24px;
+        background: #F3F7F9;
+        border: 1px solid #ccc;
+        /* margin: 20px auto; */
+        position: relative;
+        border-radius: 50px;
+        display: inline-block;
+    }
+
+        .slideThree:after {
+            content: 'NO';
+            color: #FF0000;
+            position: absolute;
+            right: 10px;
+            top: 2px;
+            z-index: 0;
+            /*font-weight: bold;*/
+        }
+
+        .slideThree:before {
+            content: 'SI';
+            color: #27ae60;
+            position: absolute;
+            left: 10px;
+            top: 2px;
+            z-index: 0;
+            /*font-weight: bold;*/
+        }
+
+        .slideThree label {
+            display: block;
+            width: 34px;
+            height: 18px;
+            cursor: pointer;
+            position: absolute;
+            border: 1px solid #ccc;
+            top: 2px;
+            left: 3px;
+            z-index: 1;
+            background: #fff;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+        }
+
+        .slideThree input[type=checkbox] {
+            visibility: hidden;
+        }
+
+            .slideThree input[type=checkbox]:checked + label {
+                left: 41px;
+            }
+</style><!--Checkbox-->
+<div class="page-content">
+    <div class="panel">
+        <header class="panel-header">
+            <h3 class="panel-title">Usuarios</h3>
+        </header>
+        <div class="panel-body">
+            <jtse-grid id="grd_MUS_Usuarios" class="col-sm-24"></jtse-grid>
+        </div>
+    </div>
+</div>
+<jtse-modal id="mdl_MUS_Usuario">
+    <div class="row">
+        <style>
+            .form-horizontal .control-label {
+                text-align: left;
+            }
+        </style>
+        <div class="col-sm-24 form-horizontal" data-container="FRM_MDL_USUARIO">
+            <jtse-accordion id="tab_MDLUsuario">
+                <div>
+                    <div class="row">
+                        <div class="col-sm-16">
+                            <div class="form-group">
+                                <div class="col-sm-24">
+                                    <label class="control-label col-sm-18">Id :</label>
+                                    <label class="control-label col-sm-6">Activo</label>
+                                    <div class="col-sm-18">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_ID" maxlength="12" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="slideThree">
+                                            <input type="checkbox" value="1" id="CHK_MDLUsuario_activo" name="check" />
+                                            <label for="CHK_MDLUsuario_activo"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-24">
+                                    <label class="control-label col-sm-24">Nombre :</label>
+                                    <div class="col-sm-24">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_Nombr" maxlength="40" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-24">
+                                    <label class="control-label col-sm-24">Cargo :</label>
+                                    <div class="col-sm-24">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_Cargo" maxlength="30" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="control-label col-sm-24">Clave sistema :</label>
+                                    <div class="col-sm-24">
+                                        <!--<input type="password" class="form-control" id="TXT_MDLUsuario_ClvSi" maxlength="10" autocomplete="off" />-->
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_ClvSi" maxlength="50" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <label class="control-label col-sm-24">Clave operación :</label>
+                                    <div class="col-sm-24">
+                                        <!--<input type="password" class="form-control" id="TXT_MDLUsuario_ClvOp" maxlength="10" autocomplete="off" />-->
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_ClvOp" maxlength="10" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-24">
+                                    <label class="control-label col-sm-24">Email :</label>
+                                    <div class="col-sm-24">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_Email" maxlength="50" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-24">
+                                    <label class="control-label col-sm-24">Dirección :</label>
+                                    <div class="col-sm-24">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_Direccion" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="col-md-24 col-sm-24">
+                                <div class="form-group">
+                                    <div class="lst-image">
+                                        <figure>
+                                            <img id="IMG_MDLUsuario_Usuar" />
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-24 col-sm-24">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="file" class="hide" id="FIL_MDLUsuario_Usuar" />
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_Usuar" />
+                                        <span id="BTN_MDLUsuario_Usuar_Adj" class="input-group-btn">
+                                            <button class="btn" type="button">
+                                                <i class="fa fa-upload"></i>
+                                            </button>
+                                        </span>
+                                        <span id="BTN_MDLUsuario_Usuar_Des" class="input-group-btn">
+                                            <button class="btn" type="button" style="background-color: #F26334;">
+                                                <i class="fa fa-download"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-24 col-sm-24" style="padding:0px 0px;">
+                                <div class="form-group">
+                                    <div class="col-sm-24">
+                                        <label class="control-label col-sm-24">Fecha de nacimiento :</label>
+                                        <div class="col-sm-24">
+                                            <div class="input-group">
+                                                <input type="text" id="TXT_MDLUsuario_FechaNacimiento" class="form-control validate-date required" placeholder="dd/mm/aaaa" autocomplete="off">
+                                                <span id="DTP_MDLUsuario_FechaNacimiento" class="input-group-btn" role="calendar">
+                                                    <button class="btn" type="button">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-24">
+                            <div class="form-group">
+                                <div class="col-sm-8">
+                                    <label class="control-label">&nbsp;</label>
+                                    <div class="col-sm-24">
+                                        <label class="control-label hand" for="CHK_MDLUsuario_Dispo">Disponible :</label>
+                                        <div class="slideThree">
+                                            <input type="checkbox" value="1" id="CHK_MDLUsuario_Dispo" name="check" />
+                                            <label for="CHK_MDLUsuario_Dispo"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <label class="control-label col-sm-24">Teléfono :</label>
+                                    <div class="col-sm-24">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_Telfo" maxlength="10" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <label class="control-label col-sm-24">Celular :</label>
+                                    <div class="col-sm-24">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_Celul" maxlength="12" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-8">
+                                    <label class="control-label col-sm-24">Anexo :</label>
+                                    <div class="col-sm-24">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_Anexo" maxlength="5" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <label class="control-label col-sm-24">Creado por :</label>
+                                    <div class="col-sm-24">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_Cread" readonly />
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <label class="control-label col-sm-24">Ultima modificación :</label>
+                                    <div class="col-sm-24">
+                                        <input type="text" class="form-control" id="TXT_MDLUsuario_UltFh" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-8">
+                                    <!--<label class="control-label">&nbsp;</label>-->
+                                    <div class="col-sm-24" style="display:none">
+                                        <label class="control-label hand" for="CHK_MDLUsuario_Conexion_Ext">Conexión extranjera:</label>
+                                        <div class="slideThree">
+                                            <input type="checkbox" value="1" id="CHK_MDLUsuario_Conexion_Ext" name="check" />
+                                            <label for="CHK_MDLUsuario_Conexion_Ext"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-16">
+                                    <label class="control-label col-sm-24">Sexo :</label>
+                                    <div class="col-sm-24">
+                                        <select class="form-control required" id="CBO_MDLUsuario_Sexo"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="DIV_MDLUsuario_Secto" style="display:none;">
+                                <div class="col-sm-24">
+                                    <label class="control-label col-sm-24">Sectorista :</label>
+                                    <div class="col-sm-24">
+                                        <select class="form-control" id="CBO_MDLUsuario_Secto"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+                <div>
+                    <div class="row">
+                        <style>
+                            .form-horizontal .control-label {
+                                padding-top: 0px;
+                            }
+
+                            @media (max-width: 768px) {
+                                .col-sm-8 {
+                                    padding-bottom: 0px;
+                                }
+                            }
+                        </style>
+                        <div class="col-sm-24 form-horizontal" id="DIV_MDLUsuario_TIPO">
+
+                        </div>
+                    </div>
+                </div>
+            </jtse-accordion>
+        </div>
+    </div>    
+</jtse-modal>
+

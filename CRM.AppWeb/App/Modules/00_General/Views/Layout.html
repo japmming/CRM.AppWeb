@@ -1,0 +1,1119 @@
+﻿<style>
+    .popover-user {
+        position: absolute;
+        float: left;
+        /*right: 120px;*/
+        left: auto;
+        /*top: 77px;*/
+        top: 61px;
+        z-index: 1000;
+        padding: 1px 0 0 0;
+        border-top-width: 0;
+        border-radius: .25rem;
+        border: 2px solid #58D3F7 !important;
+        width: 200px;
+        display: block;
+        min-width: 160px;
+        font-size: 12px;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,0.03), 0 0.9375rem 1.40625rem rgba(4,9,20,0.03), 0 0.25rem 0.53125rem rgba(4,9,20,0.05), 0 0.125rem 0.1875rem rgba(4,9,20,0.03);
+        color: #008dbd;
+    }
+    .estado.icon-border {
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        border-radius: 50%;
+        text-align: center;
+        display: inline-block;
+        margin-right: 5px;
+        color:white;
+    }
+
+        .estado.icon-border > i {
+            font-size: 16px;
+            color: white;
+            padding-top: 2px;
+        }
+
+  /*      .popover-user:after {
+            content: '';
+            left: inherit;
+            border-left: 0;
+            border-right: 20px solid #58D3F7;
+            transform: rotate(90deg);
+            content: '';
+            position: absolute;
+            right: 0px;
+            top: -23px;
+            width: 0;
+            height: 0px;
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            z-index: 999999;
+            margin-top: 0px;
+        }*/
+
+        .popover-user > li {
+            padding: 2px;
+            height: 30px;
+            text-align: center;
+            background-color: #fff;
+            color: #008dbd;
+        }
+
+            .popover-user > li:hover {
+                background-color: #E0F3FF;
+                cursor: pointer;
+            }
+
+            .popover-user > li:active {
+                background-color: #008dbd;
+                color: #fff;
+            }
+
+            .popover-user > li > button {
+                background-color: #FFF;
+                cursor: pointer;
+            }
+
+                .popover-user > li > button:hover {
+                    background-color: #E0F3FF !important;
+                    cursor: pointer;
+                }
+
+                .popover-user > li > button:active {
+                    background-color: #008dbd !important;
+                    color: #fff;
+                }
+
+    .search {
+        display: inline-block;
+        z-index: 4;
+        position: relative;
+        top: 25px;
+        right: 30px !important;
+    }
+
+    .input-search-box {
+        display: inline-block;
+        padding: 7px 13px;
+    }
+
+    .input-search {
+        border: 0px;
+        border-right: 1px solid #999;
+        outline: none;
+        background-color: #fff;
+        font-size: 12px;
+        padding: 8px;
+        height: 27px;
+        width: 350px;
+    }
+
+
+    .icon-search {
+        color: #f26334;
+        padding: 7px;
+        background-color: #fff;
+        border: 0px;
+    }
+
+    .search_panel {
+        border: 1px solid #d8d8d8;
+        width: 600px;
+    }
+
+    .search_panel_header {
+        border-bottom: 1px solid #d8d8d8;
+        padding: 3%;
+    }
+
+    .search_panel_body {
+        max-height: 150px;
+        overflow: auto;
+    }
+
+    .search_item_load {
+        padding: 4px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+        .search_item_load:hover {
+            background-color: #58D3F7;
+            cursor: pointer;
+        }
+
+    .dropdown-module {
+        display: inline-block;
+        padding: 10px;
+        /*margin-left: 2%;*/
+    }
+
+    .icon-list {
+        color: #d3e4f3;
+        margin-right: 5px;
+        font-size: 15px;
+        vertical-align: middle;
+    }
+
+    .span-module {
+        display: inline-block;
+        width: 66px;
+        /*color: #949494;*/
+        color: #008dbd;
+        font-size: 13px;
+    }
+
+    .icon-down {
+        color: #949494;
+        font-weight: 700;
+        font-size: 16px;
+        vertical-align: baseline;
+    }
+
+    .dropdown-module:hover {
+        cursor: pointer;
+    }
+
+    .dropdown-list {
+        position: absolute;
+        border: 1px solid #cecece;
+        border-radius: 6px;
+        box-shadow: 2px 3px 6px -2px #cecece;
+        background-color: #fff;
+        top: 0;
+        transform: translate3d(0px, 37px, 0px);
+    }
+
+    .item-drop-down {
+        padding: 6px 48px 5px 10px;
+        margin-bottom: 5px;
+        border-radius: 25px;
+        color: #424242;
+    }
+
+        .item-drop-down:hover {
+            background-color: #67d4f5;
+        }
+
+    .panel-drop-down {
+        padding: 12px;
+    }
+</style>
+<style>
+    .wrap {
+        position: relative;
+        /*width: 33.33%;
+        margin: -72px 0;
+        top: 50%;
+        float: right*/
+    }
+
+    .slider {
+        position: relative;
+        display: block;
+        width: 5.5em;
+        height: 2.5em;
+        cursor: pointer;
+        border-radius: 1.5em;
+        transition: 350ms;
+        background: linear-gradient(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0)), #ddd;
+        box-shadow: 0 0.07em 0.1em -0.1em rgba(0, 0, 0, 0.4) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7);
+    }
+
+        .slider:before {
+            position: absolute;
+            content: '';
+            width: 2.0em;
+            height: 2.0em;
+            top: 0.2em;
+            left: 0.5em;
+            border-radius: 50%;
+            transition: 250ms ease-in-out;
+            background: linear-gradient(#f5f5f5 10%, #eeeeee);
+            box-shadow: 0 0.1em 0.15em -0.05em rgba(255, 255, 255, 0.9) inset, 0 0.5em 0.3em -0.1em rgba(0, 0, 0, 0.25);
+        }
+
+        .slider:after {
+            position: absolute;
+            content: '';
+            width: 1em;
+            height: 1em;
+            top: 1em;
+            left: 6em;
+            border-radius: 50%;
+            transition: 250ms ease-in;
+            background: linear-gradient(rgba(#000,0.07),rgba(#fff,0.1)),#ddd;
+            box-shadow: 0 0.08em 0.15em -0.1em rgba(0, 0, 0, 0.5) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7), -7.25em 0 0 -0.25em rgba(0, 0, 0, 0.3);
+        }
+
+    input:checked + .slider:after {
+        background: linear-gradient(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.1)), #4c6;
+        box-shadow: 0 0.08em 0.15em -0.1em rgba(0, 0, 0, 0.5) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7), -7.25em 0 0 -0.25em rgba(0, 0, 0, 0.12);
+    }
+
+    input:checked + .slider:before {
+        left: 3em;
+    }
+</style>
+<style>
+    .login-access-logo {
+        margin-right: 0px;
+        height: 40px;
+        width: 400px;
+    }
+
+    .login-header-tittle {
+        position: absolute;
+        margin-left: 110px;
+        color: #454545;
+        top: 5px;
+        border: 0;
+        font-family: "Gotham SSm A", "Gotham SSm B", Verdana, sans-serif;
+        font-size: 14px;
+        font-style: inherit;
+        font-weight: 500;
+        outline: 0;
+        padding: 0;
+        vertical-align: baseline
+    }
+
+    .btn-login {
+        background-color: #f26334 !important;
+        color: white !important;
+        border-radius: 0px;
+        width: 200px;
+        height: 38px;
+    }
+
+    .btn-help {
+        background-color: #f26334 !important;
+        color: white !important;
+        border-radius: 0px;
+        height: 29px;
+    }
+
+    .position-login {
+        float: right;
+        position: relative;
+        top: 25px;
+    }
+
+
+    .drop_links {
+        font-size: 12px;
+        position: absolute;
+        right: 20px;
+    }
+
+    .MDL_drop_links {
+        font-size: 14px;
+        position: absolute;
+        right: 30px;
+        visibility: hidden;
+    }
+
+    .icon-menu {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+        .icon-menu:hover {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #F0F0F0;
+        }
+
+    .icono-list {
+        position: absolute;
+        top: 13px;
+        left: 15.42px;
+    }
+
+    @media(max-width: 1100px) {
+        .login-access-logo {
+            width: 73px;
+        }
+
+        .login-header-tittle {
+            position: absolute;
+            visibility: hidden;
+        }
+    }
+
+    @media(max-width:755px) {
+        .drop_links {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        /*.MDL_drop_links {
+            font-size: 14px;
+            position: absolute;
+            right: 30px;
+            visibility: visible !important;
+        }*/
+    }
+
+    @media(max-width:770px) {
+        .btn-help {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .search {
+            display: inline-block;
+            z-index: 4;
+            position: relative;
+            top: 25px;
+            right: 20px !important;
+        }
+    }
+
+    @media(max-width:610px) {
+        .btn-login {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .search {
+            left: 0px !important;
+        }
+    }
+
+    @media(max-width:550px) {
+        .drop_links {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .input-search {
+            width: 180px;
+        }
+    }
+
+
+    .active {
+        color: #11283D;
+    }
+
+    .inactive {
+        color: #7790a5;
+    }
+
+        .inactive:hover {
+            /*text-decoration: underline;*/
+        }
+</style>
+<style>
+    #drop_down_lenguaje .active {
+        color: #11283D;
+    }
+
+    #drop_down_lenguaje .inactive {
+        cursor: default;
+        color: #7790a5;
+    }
+
+        #drop_down_lenguaje .inactive:hover {
+            /*text-decoration: underline;*/
+        }
+
+    #drop_down .active {
+        color: #000;
+        background-color: #58D3F7;
+    }
+
+    #drop_down .inactive {
+        color: #3F6AD8;
+        background-color: transparent;
+    }
+
+        #drop_down .inactive:hover {
+            /*text-decoration: none;*/
+        }
+
+    /*.search-drop:before {
+        content: '';
+        left: inherit;
+        border-left: 0;
+        border-right: 20px solid #58D3F7;
+        transform: rotate(90deg);
+        content: '';
+        position: absolute;
+        right: 85px;
+        top: 59px;
+        width: 0;
+        height: 0px;
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid transparent;
+        z-index: 999999;
+        margin-top: 0px;
+    }*/
+
+/*    .list-drop:before {
+        content: '';
+        left: inherit;
+        border-left: 0;
+        border-right: 20px solid #58D3F7;
+        transform: rotate(90deg);
+        content: '';
+        position: absolute;
+        right: 165px;
+        top: 59px;
+        width: 0;
+        height: 0px;
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid transparent;
+        z-index: 999999;
+        margin-top: 0px;
+    }*/
+
+/*    .notification-list-drop:before {
+        content: '';
+        left: inherit;
+        border-left: 0;
+        border-right: 20px solid #58D3F7;
+        transform: rotate(90deg);
+        content: '';
+        position: absolute;
+        right: 205px;
+        top: 59px;
+        width: 0;
+        height: 0px;
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid transparent;
+        z-index: 999999;
+        margin-top: 0px;
+    }*/
+
+    .drop-down-module {
+        box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,0.03), 0 0.9375rem 1.40625rem rgba(4,9,20,0.03), 0 0.25rem 0.53125rem rgba(4,9,20,0.05), 0 0.125rem 0.1875rem rgba(4,9,20,0.03);
+        margin: .125rem;
+        position: absolute;
+        top: 100%;
+        z-index: 1000;
+        float: left;
+        min-width: 15rem;
+        margin: .125rem 0 0;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 2px solid #58D3F7;
+        border-radius: .25rem;
+        max-height: 320px;
+        overflow: auto;
+        display: none;
+    }
+
+
+        .drop-down-module .dropdown-item {
+            cursor: pointer;
+            z-index: 6;
+            position: relative;
+            width: 33.3%;
+            padding: 4px 0px;
+            clear: both;
+            color: #3F6AD8;
+            text-align: center;
+            white-space: nowrap;
+            /*background-color: transparent;*/
+            border: 0;
+        }
+
+            .drop-down-module .dropdown-item:active {
+                color: #fff;
+                background-color: #3F6AD8 !important;
+            }
+
+            .drop-down-module .dropdown-item:hover {
+                color: #3F6AD8;
+                background-color: #E0F3FF !important;
+            }
+
+
+    .drop_down_equipo {
+        box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,0.03), 0 0.9375rem 1.40625rem rgba(4,9,20,0.03), 0 0.25rem 0.53125rem rgba(4,9,20,0.05), 0 0.125rem 0.1875rem rgba(4,9,20,0.03);
+        margin: .125rem;
+        position: absolute;
+        top: 100%;
+        z-index: 1000;
+        float: left;
+        min-width: 30rem;
+        margin: .125rem 0 0;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 2px solid #58D3F7;
+        border-radius: .25rem;
+        max-height: 300px;
+        overflow: auto;
+        display: none;
+    }
+
+    .drop_down_notification {
+        box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,0.03), 0 0.9375rem 1.40625rem rgba(4,9,20,0.03), 0 0.25rem 0.53125rem rgba(4,9,20,0.05), 0 0.125rem 0.1875rem rgba(4,9,20,0.03);
+        margin: .125rem;
+        position: absolute;
+        top: 100%;
+        z-index: 1000;
+        float: left;
+        min-width: 38rem;
+        margin: .125rem 0 0;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 2px solid #58D3F7;
+        border-radius: .25rem;
+        max-height: 300px;
+        overflow: auto;
+        display: none;
+    }
+
+    .show-module {
+        display: flex !important;
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .show {
+        display: normal !important;
+    }
+
+    .footer-menu {
+        background-color: dodgerblue;
+        color: white;
+        padding-left: 6px;
+        padding-right: 6px;
+        border-radius: 2px;
+    }
+
+    .footer-menu-presupuesto {
+        background-color: forestgreen;
+        color: white;
+        padding-left: 6px;
+        padding-right: 6px;
+        border-radius: 2px;
+    }
+
+    #SPN_Notificaciones_Cantidad {
+        position: absolute;
+        top: -5px;
+        right: -2px;
+        padding: 2px 3px;
+        background-color: #F4D03F;
+        border-radius: 5px;
+        font-size: 10px;
+        color: #212F3D;
+    }
+
+    #imgNotificacion {
+        position: relative;
+    }
+
+    .navbar-toolbar::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    .navbar-toolbar::-webkit-scrollbar {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+
+
+    .navbar-toolbar::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #555;
+    }
+
+
+
+    #BTN_Equipo_ACTUALIZAR, #BTN_Notificaciones_ACTUALIZAR {
+        border: 1px solid #21618C;
+        background-color: white;
+        color: #21618C;
+        cursor: pointer;
+    }
+
+        #BTN_Equipo_ACTUALIZAR:hover, #BTN_Notificaciones_ACTUALIZAR {
+            border: 1px solid #2E86C1;
+            background-color: #2E86C1;
+            color: white;
+        }
+
+    .DIV_Notificacion:hover {
+        background-color: #F8F9F9;
+    }
+    .DIV_Lead_Notification:hover {
+        cursor:pointer;
+    }
+
+</style>
+<style>
+/*    .notification-icon::before {
+        content: '';
+        padding: 2px 2px;
+        background-color: #3498DB;
+        border-radius: 25px;
+        color: white;
+    }*/
+    .btn-active {
+        background-color: #1F618D;
+        color: white;
+        border: none;
+        outline: none;
+    }
+    .btn-active:focus {
+        border: none;
+        outline: none;
+    }
+
+    .HeaderNotification {
+        padding: 10px 15px;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    #DIV_listado_Notificaciones {
+        /*min-height:140px;
+        max-height:00px;*/
+        height: 200px;
+        overflow: auto;
+    }
+    .DIV_Descartar_Notificaciones {
+        border-top: 2px solid  #F2F4F4;
+        cursor:pointer;
+    }
+    .DIV_Descartar_Notificaciones:hover {
+        background-color: #F2F4F4;
+    }
+    .header-notification-arrow{
+        position:relative !important;
+        left:0px;
+        top :0px;
+        margin-right:15px;
+    }
+
+    .notify-icon-arrow {
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        position: absolute;
+        margin-top: 6px;
+        right: 36px;
+        transform: rotate(-180deg);
+    }
+
+    .notify-icon-arrow.rotate-90 {
+        transform: rotate(-90deg);
+    }
+
+   
+    .DetailNotification {
+        display: none;
+        opacity: 0;
+        transition: all 2s linear;
+    }
+
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+        .DetailNotification.fade-in {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.5s;
+        }
+
+    .checkNotification {
+        padding: 0px;
+        cursor: pointer;
+        height: 32px;
+        width: 32px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #3e69e4;
+    }
+    /*.checkText {
+        position: absolute;
+        visibility: hidden;
+        top: -10px;
+        left: 0px;
+    }*/
+    .checkBox-hover {
+        position: absolute;
+        transition: opacity 100ms;
+        transition-property: opacity;
+        transition-duration: 100ms;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+        opacity: 0;
+    }
+
+        .checkBox-hover:hover {
+            opacity: 1;
+        }
+/*            .checkBox-hover:hover .checkText {
+                visibility: visible;
+            }
+*/
+
+
+    .spanFormat {
+        
+        color: #686868;
+       /* margin-left: 15px;*/
+        text-overflow: ellipsis;
+        
+    
+ /*       display: inline-block;
+        color: #686868;
+        margin-left: 15px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 290px;*/
+    }
+
+        .SpanFormat.overflowHidden {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 290px;
+        }
+        
+        .SpanFormat.wrapText {
+            display: inline-block;
+            word-wrap: break-word;
+            width: 290px;
+        }
+    .connection {
+        width: 8px;
+        height: 8px;
+        border-radius: 30px;
+        right: -6px;
+        bottom: 5px;
+        position: absolute;
+    }
+        .connection.succesful {
+            background-color: green;
+        }
+
+        .connection.failed {
+            background-color: #ABB2B9;
+        }
+   
+</style>
+<div class="body-dashboard" style="overflow-y:hidden">
+    <nav class="navbar-main">
+        <!-- <div id="nav_LA_Header" class="navbar-header hide">
+            <div class="navbar-brand">
+                <img id="img_LA_Logo" class="navbar-brand-logo" title="GS1 Perú" style="display:none">
+                <span id="spn_LA_Logo" class="navbar-brand-text">GS1 Perú</span>
+            </div>
+        </div>-->
+        <div id="nav_LA_Container" class="navbar-container">
+            <div class="navbar-collapse">
+                <ul class="navbar-toolbar">
+                    <li>
+                        <a id="btn_LA_Toggle" href="javascript:void(0)" class="icon-menu">
+                            <!--<i class="fa fa-arrow-left inactive"></i>-->
+                            <!--<i class="fa fa-th-list icon-list inactive" id="ico_lists" aria-hidden="true"></i>-->
+                            <i class="fa icono-list" id="ico_lists" aria-hidden="true" style="color:#76838f; font-size:20px;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <div id="IMG_LOGO_HEADER" class="login-access-logo text-left"></div>
+                        <div class="login-header-tittle">
+                            <!--<b>Bienvenido a NATCODEE</b><br />-->
+                            <!--El Lenguaje Global de los Negocios-->
+                        </div>
+                    </li>
+                    <li>
+                        <div id="DIV_LAYOUT_DEVELOPER_TITLE">
+
+                        </div>
+                    </li>
+                    <!--<li>
+            <a id="btn_LA_FullScreen" class="navbar-show" href="javascript:void(0)">
+                <i class="fa fa-expand"></i>
+            </a>
+        </li>-->
+                </ul>
+
+                <div id="dropdown_lenguaje" class="drop_links">
+                    <div id="drop_down_lenguaje" style="position:relative;">
+                        <div  id="socketConnectionState" class="connection"></div>
+                        <a class="hand active" id="mensajeBienvenida" style="padding:5px;cursor:default;">
+                            Bienvenido <b>Administrador</b>
+                        </a>
+
+                        <!--|-->
+                        <a class="hand active" style="padding:5px; display:none">
+                            <img id="IMG_LG_ESP" style="width: 24px; height: 12px;" /> ESP&nbsp;<i id="icon_espanol" class="font fa fa-check-circle" style="font-size: 14px;color: #4CAF50"></i>
+                        </a>
+                        <!--|-->
+                        <a class="hand inactive" style="padding:5px; display:none">
+                            <img id="IMG_LG_ENG" style="width: 24px; height: 12px;" /> ENG&nbsp;<i id="icon_ingles" class="font fa fa-check-circle" style="font-size: 14px;color: #4CAF50;display:none;"></i>
+                        </a>
+                    </div>
+                </div>
+                <div id="dropdown_module" class="drop_links" style="visibility:hidden;position:absolute">
+
+                </div>
+                <div id="MDL_dropdown_module" class="MDL_drop_links hand">
+                    <a id="MDL_Modulos"><i class="fa fa-th-list"></i> Modulos</a>
+                </div>
+                <div class="position-login" style="right: 20px !important;">
+                    <!--img_LA_Avatar-->
+                    <!--<button id="imgUsuAvatar" class="btn btn-login"><img id="img_LA_Avatar" style="width:20px; height:20px;" /> Usuario</button>-->
+                    <button id="imgHome" class="btn btn-help" title="Inicio" style="font-size: 17px;padding: 0px 7px;"><i class="fa fa-home"></i></button>
+                    <button id="imgHelp" class="btn btn-help" title="Ayuda" style="font-size: 17px;padding: 0px 7px; display:none"><i class="fa fa-question-circle"></i></button>
+                    <button id="imgDashboard" class="btn btn-help" title="Paneles" style="display:none" ><i class="fa fa-dashboard" style="font-size:15px;"></i></button>
+                    <button id="imgNotificacion" class="btn btn-help" title="Notificaciones"><i class="fa fa-bell"></i><span id="SPN_Notificaciones_Cantidad"></span></button>
+                    <button id="imgUsuarios" class="btn btn-help" title="Ejecutivos"><i class="fa fa-group"></i></button>
+                    <button id="imgUsuAvatar" class="btn btn-help" title="Cambiar clave" data-active="false" style="display:none"><i class="fa" style="font-size:15px;"></i></button>
+                    <!--<button id="imgLenguaje" class="btn btn-help"><i class="fa" style="font-size:15px;"></i></button>-->
+                    <button id="imgModule" class="btn btn-help" title="Módulos" style="padding:0px 7px; padding-top:2px;"><img id="IMG_MODULO" style="width: 24px; height: 24px;"></button>
+                    <!--<button id="imgSalir" class="btn btn-help" style="padding:0px 7px; padding-top:2px;"><i class="fa fa-sign-out"></i></button>-->
+                    <button id="imgSalir" class="btn btn-help" title="Cerrar sesión"><i class="fa fa-sign-out" style="font-size:15px;"></i></button>
+                </div>
+                <!--#region imgModule-->
+                <div id="module_load" class="style_scroll_module">
+                </div>
+                <!--#endregion-->
+                <!--#region imgUsuarios-->
+                <div id="notification_load">
+                    <div id="drop_down_notification" class="drop_down_notification" style="will-change: transform; position: absolute; top: 16px; transform: translate3d(-180px, 44px, 0px); width: 160px;">
+                        <div style="display:flex;flex-direction:row;justify-content:space-between;margin-top:15px;padding:0px 10px;">
+                            <span style="font-size:16px;">Notificaciones</span>
+                            <button id="BTN_Notificaciones_ACTUALIZAR">Refrescar</button>
+                        </div>
+                        <div id="DIV_listado_Notificaciones">
+
+                        </div>
+                        <div class="text-center DIV_Descartar_Notificaciones" id="BTN_DescartarNotificaciones" style="padding: 10px 0px; align-content: center; color: #85929E; ">
+                            <span style="font-weight:600">Descartar todo</span><i class="fa fa-recycle" style="margin-left:5px;"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <!--#endregion-->
+                <!--#region imgUsuarios-->
+                <div id="equipo_load">
+                    <div id="drop_down_equipo" class="drop_down_equipo" style="will-change: transform; position: absolute; top: 16px; right: -20px; transform: translate3d(-180px, 44px, 0px); width: 160px;">
+                        <div style="display:flex;flex-direction:row;justify-content:space-between;margin-top:15px;padding:0px 10px;">
+                            <span style="font-size:16px;">Ejecutivos</span>
+                            <button id="BTN_Equipo_ACTUALIZAR">Refrescar</button>
+                        </div>
+                        <div style="display:flex;flex-direction:row;justify-content:space-between;padding:0px 10px;margin-top:10px;">
+                            <button id="BTN_Equipo_TODOS" class="btn">Todos</button>
+                            <button id="BTN_Equipo_DISPONIBLES"  class="btn">Disponibles</button>
+                            <button id="BTN_Equipo_NO_DISPONIBLES"  class="btn">No disponibles</button>
+                        </div>
+                        <div id="DIV_listado_Equipo">
+
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion-->
+                <!--#region imgUsuAvatar-->
+                <ul id="ppr_LA_User" class="popover-user hide">
+                    <!--<li class="user-header">
+        <img id="img_LA_AvatarFull" src="#" class="img-circle" alt="">
+        <p>
+
+        </p>
+    </li>-->
+                    <!--<li class="user-footer">-->
+                    <!--<li class="pruebali">
+        <span class="control-label text-center" style="font-size:12px;" id="spn_LA_UserName"></span>
+    </li>
+    <li class="pruebali">
+        <span class="control-label text-center" style="font-size:12px;" id="sm_LA_Job"></span>
+    </li>-->
+                    <li class="pruebali">
+                        <span class="control-label">Conectado</span>
+                        <div class="slideThree pull-right" id="DIV_CHK_LA_Conectado">
+                            <input type="checkbox" value="1" id="CHK_LA_Conectado" name="check" />
+                            <label for="CHK_LA_Conectado"></label>
+                        </div>
+                        <!--<button id="btn_LA_CambiarContrasenia" class="btn w-100" style="background-color:#fff; padding-top: 0px; padding-bottom: 0px;">Cambiar contraseña</button>-->
+                    </li>
+                    <li class="pruebali">
+                        <button id="btn_LA_CambiarContrasenia" class="btn w-100" style="background-color:#fff; padding-top: 0px; padding-bottom: 0px;">Cambiar contraseña</button>
+                    </li>
+                    <li class="pruebali">
+                        <button id="btn_LA_VerLeads" class="btn w-100" style="background-color:#fff; padding-top: 0px; padding-bottom: 0px;">Ver mis leads</button>
+                    </li>
+                    <!--<li style="height:31px;" >
+        <label class="control-label col-8" for="s1" style="padding-top: 5px;">Conectado </label>
+        <div class="col-16 pull-right" style="height:31px;">
+            <input type="checkbox" id="s1" checked style="position: absolute; left: -9999px" />
+            <label class="slider" for="s1" style="font-size: 10px; left: 98px;"></label>
+        </div>
+    </li>-->
+                    <!--<li id="btn_LA_SalirSistema" href="javascript:void(0)" style="height: 31px;padding-top: 9px;">
+        <span class="control-label text-center" style="font-size:12px;">Salir del sistema <i class="fa fa-sign-out"></i></span>
+    </li>-->
+                    <!--<li>
+        <div>
+            <span class="control-label" style="font-size:12px;" id="sm_LA_Job"></span>
+        </div>
+        <div>
+            <button id="btn_LA_CambiarContrasenia" class="btn w-100">Cambiar contraseña</button>
+        </div>
+        <div class="wrap">
+            <label class="control-label col-8">Conectado </label>
+            <div class="col-16 pull-right" style="height:31px;">
+                <input type="checkbox" id="s1" checked style="position: absolute; left: -9999px" />
+                <label class="slider" for="s1" style="font-size: 10px; left: 98px;"></label>
+            </div>
+        </div>
+    </li>-->
+                    <!--<li>
+        <div class="wrap">
+            <div class="col-24 pull-left" style="height:31px;">
+                <a id="btn_LA_SalirSistema" href="javascript:void(0)">
+                    Salir del sistema <i class="fa fa-sign-out"></i>
+                </a>
+            </div>
+        </div>
+    </li>-->
+                </ul>
+                <!--#endregion-->
+                <div class="search pull-right">
+                    <div id="search_module_y_icon" class="input-group" style="border: 1px solid #999; display:none;">
+                        <input type="text" class="input-search" placeholder="Nombre del asociado..." id="search_module" autocomplete="off">
+                        <i id="btnRefrescar" class="fa fa-refresh icon-search" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div id="search_load">
+                </div>
+                <!--<img src="../../../../Resources/Images/Modules/tesoreria.jpg" />-->
+            </div>
+        </div>
+    </nav>
+
+    <div id="div_LA_Menubar" class="menubar">
+        <div class="menubar-body">
+            <!--
+            [data-menu=AsignacionSolicitudesCod]
+            [data-menu=AsignacionSolicitudesCodPago]
+            -->
+            <style>
+                ul.menu > li.menu-item > ul.menu-sub > li.menu-sub-item > ul.menu-sub > li.menu-sub-item > ul.menu-sub > li.menu-sub-item > a.btnsMenu {
+                    position: absolute;
+                }
+
+                /*.menu-sub-item a.btnsMenu[data-id="72"],
+                .menu-sub-item a.btnsMenu[data-id="73"] {
+                    position: absolute;
+                }*/
+            </style>
+            <ul id="ul_LA_Menu" class="menu"></ul>
+        </div>
+    </div>
+    <div class="page">
+        <view view-name="view-Main"></view>
+    </div>
+    <footer id="foo_LA_Copyright" class="layout-footer">
+        <style>
+            #foo_LA_presupuesto_linea:hover {
+                cursor: pointer;
+                background-color: #33b333;
+            }
+        </style>
+        <div class="version"><span id="spn_LA_Version"></span></div>
+        <div class="copyright">© 2023 <a href="" target="_blank">NATCODEE</a></div>
+        <label class="footer-menu" id="foo_LA_modulo_menu"></label>
+        <label class="footer-menu" style="display:none;" id="FOO_LA_BASEDATOS"></label>
+        <label class="footer-menu" style="display:none;" id="FOO_LA_COM-VEN_D"></label>
+        <label class="footer-menu" style="display:none;" id="FOO_LA_CAJERO"></label>
+        <label id="foo_LA_presupuesto_anno" style="display:none;" class="footer-menu-presupuesto"></label>
+        <label id="foo_LA_presupuesto_linea" style="display:none;" class="footer-menu-presupuesto"></label>
+        <label id="foo_LA_presupuesto_ejecutado" style="display:none;" class="footer-menu-presupuesto"></label>
+    </footer>
+</div>
+<jtse-modal id="mdl_PAG_DETALLE_ASOCIADO">
+    <view view-name="vw-PAG_DETALLE_ASOCIADO"></view>
+</jtse-modal>
+<jtse-modal id="mdl_PAG_LNEAS_NEGOCIO">
+    <div class="row">
+        <div class="form-horizontal" data-container="FRM_MDL_PAG_LNEAS_NEGOCIO">
+            <div class="col-md-24">
+                <div class="form-group">
+                    <jtse-grid id="grd_DATA_LINEAS_NEGOCIO" class="col-sm-24"></jtse-grid>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-5" style="padding-left:16px;padding-right:16px;">
+                        Presupuesto:
+                    </div>
+                    <div class="col-sm-16" style="padding-left:16px;padding-right:16px;">
+                        <select class="form-control" id="CBO_PRESUPUESTO"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</jtse-modal>
+
+<jtse-modal id="mdl_RECORDATORIO">
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="col-md-24">
+                <div class="form-group">
+                    <div class="col-md-24 text-center">
+                        <h1 id="lblRecordatorio_Accion" style="margin: 0px 0px; color: black; font-size: 30px;"></h1>
+                    </div>
+                </div>
+                <div class="form-group" style="padding: 5px 0px;">
+                    <div class="col-md-24 text-center">
+                        <span id="lblRecordatorio_Nombre_Apellido" style="color:black"></span>
+                    </div>
+                </div>
+                <div class="form-group" style="padding: 5px 0px;">
+                    <div class="col-md-12 text-left">
+                        <span id="lblRecordatorio_Correo" style="color:black"></span>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <span id="lblRecordatorio_Telefono" style="color:black"></span>
+                    </div>
+                </div>
+                <div class="form-group" style="padding: 5px 0px;">
+                    <div class="col-md-24 text-center">
+                        <span id="lbl_Recordatorio_Comentario" style="color:black"></span>
+                    </div>
+                    
+                </div>
+                <div class="form-group" style="padding: 5px 0px;">
+                    <div class="col-md-24">
+                        <span id="lbl_Recordatorio_Fecha_Hora" style="color:black"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</jtse-modal>

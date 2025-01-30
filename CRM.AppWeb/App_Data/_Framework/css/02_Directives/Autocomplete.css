@@ -1,0 +1,20 @@
+﻿.marca-combo {
+    position: absolute;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    /*height: 51px;*/
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 3px 3px 6px 0px #9a9a9a;
+}
+
+.item-marca {
+    padding: 3px 6px;
+    cursor: pointer;
+}
+
+    .item-marca:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+    }

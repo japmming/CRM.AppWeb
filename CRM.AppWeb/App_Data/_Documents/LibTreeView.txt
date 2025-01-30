@@ -1,0 +1,23 @@
+﻿Ejemplo de TreeView (Estructura)
+
+HTML5
+**********************
+<div id="ID" class="jtse-treeview"></div>
+
+JAVASCRIPT
+**********************
+$$treeview('trvLista').create({
+	Title: 'idTitle',				/*Título en el idioma correspondiente*
+	DataRoot: '',					/*Ejemplo de data padre '1¦Root 1¦0¬2¦Root 2¦0'*/
+	DataChild: '',					/*Ejemplo de data hijo '3¦Root 3¦1¬4¦Root 2¦2'*/
+	IndexRoot: 0,					/*Indice de padre*/
+	IndexChild: 2,					/*Indice de hijo*/
+	IndexRootText: 1,				/*Indice de texto padre*/
+	IndexChildText: 1,				/*Indice de texto hijo*/
+	IdChild: 0,						/*Id de hijo*/
+	SeparatorReg: '¬',				/*Separador de registros*/
+	Separator: '¦',					/*Separador de campos*/
+	Expanded: true,					/*expandido*/
+	Scope: namespace,				/*namespace*/
+	FnAction: 'funcion'				/*función a ejecutar*/
+});

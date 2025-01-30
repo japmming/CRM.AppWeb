@@ -1,0 +1,122 @@
+﻿html {
+    font-family: "Gotham SSm A", "Gotham SSm B", Verdana, sans-serif !important;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    margin: 0;
+    font-family: "Gotham SSm A", "Gotham SSm B", Verdana, sans-serif !important;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #76838f;
+    background-color: #f1f4f5;
+    overflow-y: auto !important;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+hr {
+    color: #76838f;
+    border-top: 1px dashed rgb(169, 169, 169);
+}
+
+[hidden],
+template {
+    display: none;
+}
+
+a {
+    background-color: transparent;
+}
+
+    a:active,
+    a:hover {
+        outline: 0;
+    }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 30px;
+}
+
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 11px;
+}
+
+    ul ul {
+        list-style-type: none;
+    }
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+    a:hover,
+    a:focus {
+        text-decoration: none;
+    }
+
+    a:focus {
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    text-shadow: rgba(0,0,0,.15) 0 0 1px;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+jtse-accordion, jtse-alert, jtse-grid, jtse-grid, jtse-loading,
+jtse-modal, jtse-multiselect, jtse-multitag, jtse-popover,
+jtse-tabs, jtse-tooltip {
+    display: none;
+}

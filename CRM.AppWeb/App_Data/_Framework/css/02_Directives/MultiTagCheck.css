@@ -1,0 +1,121 @@
+﻿
+
+.body-mul-tag {
+    min-height: 26px;
+    max-height: 72px;
+    border: 1px solid #cccccc;
+    display: flex;
+}
+
+    .body-mul-tag.disabled {
+        cursor: not-allowed
+    }
+
+    .body-mul-tag .mul-tag-content-item {
+        display: flex;
+        width: 100%;
+        flex-flow: wrap;
+        overflow-y: auto
+    }
+
+
+
+.mul-tag-content-item-ico {
+    display: flex;
+    padding: 0px 6px 0px 6px;
+}
+
+    .mul-tag-content-item-ico .content-ico {
+        font-size: 20px;
+        align-self: center;
+        font-weight: 600;
+        color: #555555;
+    }
+
+.mul-tag-item {
+    margin: 2px;
+    color: #fff;
+    background-color: #0275d8;
+    border-radius: 3px;
+    border: 1px solid #01649e;
+    display: inline-flex;
+    height: 20px;
+}
+
+.mul-tag-item-text {
+    padding-left: 4px;
+    padding-right: 4px;
+    display: flex;
+    align-self: center;
+}
+
+.mul-tag-item-ico {
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    margin-left: 3px;
+    margin-right: 3px;
+    background-color: #045aa5;
+    border-radius: 4px;
+    display: flex;
+    align-self: center;
+}
+
+.body-mul-tag.disabled .mul-tag-item-ico {
+    cursor: not-allowed
+}
+
+.mult-tag-option-content {
+    position: absolute;
+    overflow: auto;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    width: calc(100% - 16px);
+    z-index: 20;
+    background-color: white;
+    box-shadow: 3px 3px 4px -4px #9a9a9a;
+    max-height: 195px;
+}
+
+.mult-tag-option-content-span {
+    color: #555;
+    font-weight: 600;
+    display: block;
+    padding: 6px;
+    user-select: none;
+}
+
+
+.mult-tag-option-ul {
+    list-style: none;
+    padding-inline-start: 0px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+    .mult-tag-option-ul > li {
+        padding-left: 25px;
+        margin-bottom: 3px;
+        color: #555;
+        cursor: pointer;
+        display: flex;
+    }
+
+        .mult-tag-option-ul > li > input[type=checkbox] {
+            align-self: center;
+            margin-right: 8px;
+        }
+
+        .mult-tag-option-ul > li > label {
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            user-select: none;
+        }
+
+.mult-error {
+    border: 1px solid #a94442 !important;
+}

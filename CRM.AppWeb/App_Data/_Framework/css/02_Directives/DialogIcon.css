@@ -1,0 +1,116 @@
+
+.icons-success {
+    width: 61px;
+    height: 51px;
+    border-radius: 50%;
+    border: 3px solid #a5dc86;
+    animation-name: rotation;
+    animation-duration: .8s;
+    display: inline-block;
+}
+
+.type-success-x {
+    border: 1.5px solid #a5dc86;
+    background-color: #a5dc86;
+    width: 21px;
+    transform: rotate(34deg);
+    transform-origin: -36px 20px;
+    border-radius: 5px;
+}
+
+.type-success-y {
+    border: 1.5px solid #a5dc86;
+    background-color: #a5dc86;
+    width: 30px;
+    transform: rotate(126deg);
+    transform-origin: 17px 15px;
+    border-radius: 5px;
+}
+
+.icon-error {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #f27474;
+    animation-name: rotation;
+    animation-duration: .8s;
+}
+
+.type-error-x {
+    border: 2px solid #f27474;
+    background-color: #f27474;
+    width: 36px;
+    transform: rotate(47deg);
+    transform-origin: -4px 17px;
+    border-radius: 5px;
+}
+
+.type-error-y {
+    border: 2px solid #f27474;
+    background-color: #f27474;
+    width: 36px;
+    transform: rotate(134deg);
+    transform-origin: 16px 11px;
+    border-radius: 5px;
+}
+
+.type-question {
+    line-height: 45px;
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #87adbd;
+}
+
+.icon-question {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #87adbd;
+    animation-name: rotation;
+    animation-duration: .8s;
+}
+
+.type-info {
+    line-height: 45px;
+    text-align: center;
+    color: #3fc3ee;
+    font-size: 36px;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.icon-info {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #3fc3ee;
+    animation-name: rotation;
+    animation-duration: .8s;
+}
+
+.type-warning {
+    line-height: 45px;
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #f8bb86;
+}
+
+.icon-warning {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #f8bb86;
+    animation-name: rotation;
+    animation-duration: .8s;
+}
+
+@keyframes rotation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
+}

@@ -1,0 +1,16 @@
+﻿<div class="page-header">
+	<ol class="breadcrumb">
+		<li><a href="javascript:void(0)">Nombre del menú</a></li>
+		<li class="active">Nombre de la vista actual</li>
+	</ol>
+</div>
+<div class="page-content">
+	<div class="panel">
+		<header class="panel-heading">
+			<h3 class="panel-title">Título</h3>
+		</header>
+		<div class="panel-body form-horizontal">
+			
+		</div>
+	</div>
+</div>

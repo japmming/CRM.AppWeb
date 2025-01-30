@@ -1,0 +1,50 @@
+﻿.jtse-alert .alert {
+    color: white;
+    padding: 10px 36px;
+    position: fixed;
+    font-weight: bold;
+    top: 70px;
+    right: 10px;
+    z-index: 2000;
+    border-radius: 8px;
+    z-index: 999;
+}
+
+    .jtse-alert .alert.move-right {
+        opacity: 0;
+        transform: translateX(150%);
+        transition: all 1s ease-in-out;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+    }
+
+    .jtse-alert .alert > span {
+        display: block;
+    }
+
+.jtse-alert.anix .alert.move-right {
+    transform: translateX(0%);
+    opacity: 1;
+    z-index: 2000;
+}
+
+.jtse-alert .success {
+    background-color: #78d14e;
+}
+
+.jtse-alert .info {
+    background-color: #58bcef;
+}
+
+.jtse-alert .warning {
+    background-color: #f89854;
+}
+
+.jtse-alert .error {
+    background-color: #F44336;
+}
+
+.jtse-alert .default {
+    background-color: #c8c5c5;
+}

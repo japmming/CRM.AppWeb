@@ -1,0 +1,24 @@
+﻿@media (max-height: 600px) and (orientation: landscape) {
+    .login-access-container {
+        padding-top: 5%;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape), (max-height: 470px) and (orientation: portrait) {
+    .login-access-footer {
+        display: none;
+    }
+}
+
+@media (max-width:300px) {
+    .navbar-title {
+        display: none !important;
+    }
+}
+
+
+@media (max-height: 350px) and (orientation: landscape) {
+    .login-access-logo {
+        height: 50px;
+    }
+}

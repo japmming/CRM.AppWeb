@@ -1,0 +1,301 @@
+﻿jtse-grid .toolbar-grid {
+    padding: 0px;
+    margin-bottom: 8px;
+    /**/
+    border-top: 1px solid #62a8ea;
+    border-bottom: 1px solid #62a8ea;
+    border-right: 1px solid #62a8ea;
+    border-left: 1px solid #62a8ea;
+    border-radius: 0px 0px 0px 0px !important;
+    background-color: #D8E9FA;
+}
+
+.toolbar-grid button {
+    float: left;
+    list-style: none;
+    border-right: 1px solid #62a8ea;
+    background-color: white !important;
+    color: #62a8ea;
+    border-radius: 0px 0px 0px 0px;
+    padding: 6px 12px;
+}
+
+    .toolbar-grid button:hover {
+        background-color: #62a8ea !important;
+        color: white !important;
+    }
+
+    .toolbar-grid button:focus {
+        outline: 0px !important;
+    }
+
+.toolbar-grid input {
+    float: left;
+    list-style: none;
+    height: 31px;
+    border: 0px;
+    width: 450px !important;
+}
+
+jtse-grid .grid {
+    color: #76838f;
+    max-width: none !important;
+    margin: 0;
+    clear: both;
+    border: 1px solid #e4eaec;
+    font-size: 11px;
+}
+
+.grid td, .grid th {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: 0;
+}
+
+.grid th {
+    text-align: left;
+}
+
+.grid > thead > tr > th,
+.grid > thead > tr > td,
+.grid > tbody > tr > th,
+.grid > tbody > tr > td,
+.grid > tfoot > tr > th,
+.grid > tfoot > tr > td {
+    padding: 3px;
+    line-height: 1.57142857;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+    border-left: 1px solid #e4eaec;
+    /*border-right: 1px solid #e4eaec;*/
+    border-bottom: 1px solid #e4eaec;
+}
+
+.grid > thead > tr > th {
+    padding-right: 8px;
+    padding-left: 8px;
+    vertical-align: bottom;
+    border-bottom: 1px solid #e4eaec;
+}
+
+.grid > tfoot > tr > th, .grid > thead > tr > th {
+    font-weight: bold;
+    color: #526069;
+}
+
+.grid thead .sorting,
+.grid thead .sorting_asc,
+.grid thead .sorting_asc_disabled,
+.grid thead .sorting_desc,
+.grid thead .sorting_desc_disabled {
+    position: relative;
+    padding-right: 16px;
+    cursor: pointer;
+}
+
+.grid th:active {
+    outline: 0;
+}
+
+.grid > caption + thead > tr:first-child > td,
+.grid > caption + thead > tr:first-child > th,
+.grid > colgroup + thead > tr:first-child > td,
+.grid > colgroup + thead > tr:first-child > th,
+.grid > thead:first-child > tr:first-child > td,
+.grid > thead:first-child > tr:first-child > th {
+    border-top: 0;
+    vertical-align: middle;
+}
+
+.grid > tbody:not(.no-hover) > tr:hover,
+.grid > tbody:not(.no-hover) > tr:nth-of-type(odd):hover {
+    cursor: pointer;
+    background-color: rgba(0, 168, 80, 0.2);
+}
+
+/*--Nuevo Seleccionar Fila */
+.table-selected-tr {
+    background-color: rgba(0, 168, 80, 0.2) !important;
+}
+
+.grid > tbody:not(.no-hover) > tr:nth-of-type(odd) {
+    background-color: #F6F6F8;
+}
+
+.grid thead .sorting_asc:after {
+    content: "\f0de";
+}
+
+.grid thead .sorting_desc:after {
+    content: "\f0dd";
+}
+
+.grid thead .sorting:after,
+.grid thead .sorting_asc:after,
+.grid thead .sorting_desc:after {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: block;
+    font-family: "FontAwesome";
+    opacity: .5;
+}
+
+jtse-grid .table-layout {
+    table-layout: fixed;
+}
+
+jtse-grid .word-break {
+    overflow: hidden;
+    word-break: break-all;
+}
+
+jtse-grid .word-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+jtse-grid .grid-bottom {
+    margin-bottom: 6px;
+}
+
+jtse-grid .grid-title {
+    color: #37474f;
+    font-weight: bold;
+}
+
+jtse-grid .pagination-pages {
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.pagination-button {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+    .pagination-button:first-child {
+        border-left: 1px solid #ccc;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .pagination-button:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin-right: 20px;
+    }
+
+    .pagination-button:hover {
+        background-color: lightgray;
+        color: #62a8ea;
+    }
+
+    .pagination-button.active {
+        color: white;
+        background-color: #62a8ea;
+    }
+
+.grid .search-ico {
+}
+
+.btn-grid-new, .btn-grid-edit, .btn-grid-delete-multiple, .btn-grid-refresh, .btn-grid-export-excel, .btn-grid-export-text {
+    color: #fff;
+    outline-color: transparent !important;
+}
+
+.btn-grid-new {
+    background-color: #62a8ea;
+}
+
+.btn-grid-delete-multiple {
+    background-color: #f04349;
+}
+
+.btn-grid-refresh {
+    background-color: #28a745;
+}
+
+.btn-grid-export-excel {
+    background-color: #019272;
+}
+
+.btn-grid-export-text {
+    background-color: gray;
+}
+
+.btn-grid-edit {
+    color: #62a8ea;
+}
+
+.btn-grid-delete {
+    color: #fc1921;
+}
+
+/*GRID SCROLL*/
+
+.grid {
+    border-collapse: collapse;
+}
+
+.grid-scroll td, .grid-scroll th {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.grid-scroll-header {
+    overflow: hidden;
+    position: relative;
+    border: 0px;
+    width: 100%;
+}
+
+    .grid-scroll-header > div {
+        box-sizing: content-box;
+        padding-right: 17px;
+    }
+
+.grid-scroll-body {
+    position: relative;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.grid-scroll td, .grid-scroll th {
+    padding: .4rem;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.grid-scrollbar {
+    position: relative;
+    /*height: 200px;*/
+    overflow: auto;
+}
+
+@media(max-width:837px) {
+    .toolbar-grid input {
+        border-top: 1px solid #62a8ea;
+        width: inherit !important;
+    }
+}
+
+.border-left-grid {
+    border-right: 0px !important;
+    border-left: 1px solid #62a8ea;
+}
+
+button.spn-grid {
+    color: #5cb85c;
+}
+
+.toolbar-grid button.spn-grid:hover {
+    background-color: white !important;
+    color: #5cb85c !important;
+    cursor: default !important;
+}

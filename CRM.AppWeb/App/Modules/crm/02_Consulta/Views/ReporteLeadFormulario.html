@@ -1,0 +1,107 @@
+﻿<div class="page-content">
+    <div class="panel">
+        <header class="panel-header">
+            <h3 class="panel-title">Reportes por Formulario</h3>
+        </header>
+
+        <div class="panel-body">
+            <div class="form-horizontal" data-container="frmLeadsLST">
+                <div class="form-horizontal" data-container="frmLeadsLST">
+
+                    <div class="col-sm-24">
+                        <div class="row" style="margin-bottom:6px;">
+                            <div class="col-sm-24">
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-4">
+                                        <label id="lbl_LeadsLST_Asociado" class="control-label">Fecha Inicio (*) :</label>
+                                    </div>
+
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" role="checkbox">
+                                                <input type="checkbox" style="width: 13px" class="checkbox-inline" id="CHK_FECHA_INICIO" />
+                                            </span>
+                                            <input type="text" id="txt_FECHA_INICIO" class="form-control validate-date" placeholder="dd/mm/yyyy" disabled>
+                                            <span id="dpt_FECHA_INICIO" class="input-group-btn" role="calendar">
+                                                <button class="btn" type="button">
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label id="lbl_LeadsLST_Asociado" class="control-label">Fecha Final (*) :</label>
+                                    </div>
+
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" role="checkbox">
+                                                <input type="checkbox" style="width: 13px" class="checkbox-inline" id="CHK_FECHA_FINAL" />
+                                            </span>
+                                            <input type="text" id="txt_FECHA_FINAL" class="form-control validate-date" placeholder="dd/mm/yyyy" disabled>
+                                            <span id="dpt_FECHA_FINAL" class="input-group-btn" role="calendar">
+                                                <button class="btn" type="button">
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-2">
+                                        <label class="control-label text-left">Campaña: </label>
+                                    </div>
+
+                                    <div class="col-sm-5 ">
+                                        <select class="form-control required col-md-24" id="cbo_LeadsNombre_Campania">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-2 ">
+                                        <label class="control-label text-left">Evento: </label>
+                                    </div>
+
+                                    <div class="col-sm-5">
+                                        <select class="form-control required col-md-24" id="cbo_LeadsNombre_Evento">
+                                            <option value="">Todos</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        <label class="control-label text-left">Ejecutivo: </label>
+                                    </div>
+
+                                    <div class="col-sm-5">
+                                        <select class="form-control required col-md-24" id="cbo_LeadsNombre_Ejecutivo">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-sm-2">
+                                        <button class="btn btn-search-ico" id="btn_Buscar">Buscar</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-24">
+                                <div class="form-group">
+                                    <jtse-grid id="grd_repFormulario"></jtse-grid>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

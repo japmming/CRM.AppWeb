@@ -1,0 +1,214 @@
+﻿<style>
+    .header-table {
+        background-color: rgb(70,130,180);
+        border: 1px solid #e4eaec;
+        color: white !important;
+        text-align: left;
+    }
+
+    #table_listado_modulos {
+        border: 1px solid #e4eaec;
+    }
+
+    .lst-grid-container {
+        display: grid;
+        grid-gap: 0.5rem;
+        width: 80%;
+        margin: 1em auto;
+        /* overflow-x: auto; */
+    }
+
+    .search_panel_text {
+        border: 1px solid #d8d8d8;
+    }
+
+    .search_panel_header_text {
+        border-bottom: 1px solid #d8d8d8;
+        padding: 3%;
+    }
+
+    .search_panel_body_text {
+        max-height: 150px;
+        overflow: auto;
+    }
+
+    .search_item_load_text {
+        padding: 7px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+        .search_item_load_text:hover {
+            background-color: #58D3F7;
+            cursor: pointer;
+        }
+
+    .estado-permiso {
+        text-align: center;
+        color: white;
+        line-height: 1.8;
+        padding: 10.5px;
+        background-color: #f3f7f9;
+        border: 1px solid #d0cccc;
+    }
+
+    .inactivo {
+        background-color: #ffc0c0eb !important;
+        border: 1px solid #e40909b8 !important;
+        color: #e40909b8;
+        padding: 0px !important;
+    }
+
+    .activo {
+        background-color: #c2f7ce !important;
+        color: #28a745;
+        border: 1px solid #28a745 !important;
+        padding: 0px !important;
+    }
+</style>
+<div class="page-content">
+    <div class="panel">
+        <header class="panel-header">
+            <h3 class="panel-title">Permisos</h3>
+        </header>
+        <div class="form-horizontal panel-body" data-container="frmUsuarioPermiso">
+            <div class="lst-grid-container">
+                <div class="col-24">
+                    <div class="row">
+                        <div class="col-24">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">
+                                    Usuario:
+                                </label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input id="permiso_buscar_Module" type="text" class="form-control required" maxlength="12">
+                                        <span id="btb_permiso_buscar_Module" class="input-group-btn" role="search">
+                                            <button class="btn" type="button" tabindex="-1">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" id="permiso_user_name" class="form-control required" readonly />
+                                </div>
+                                <div class="col-sm-3">
+                                    <div id="Permiso_usuario_Estado" class="estado-permiso"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-24">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">
+                                    Modulo:
+                                </label>
+                                <div class="col-sm-14">
+                                    <select id="Seleccionar_Modulos" class="form-control required"></select>
+                                </div>
+
+                                <div style="margin-top: -3px;float:right;margin-right: 0.2%;">
+                                    <button id="permiso_refresh" class="btn btn-grid-refresh"><i class="fa fa-refresh" style="margin-right: 5px;"></i>Refrescar</button>
+                                    <button class="btn btn-save-ico" id="UsuarioPermiso_aceptar">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-24">
+                            <div class="form-group">
+                                <div class="col-sm-3 col-sm-offset-2" style="display:none">
+                                    <input type="checkbox" id="CHX_permiso_dashboard" style="transform: scale(1.2);" />
+                                    <label for="CHX_permiso_dashboard" class="control-label">
+                                        Dashboard
+                                    </label>
+                                </div>
+                                <div class="col-sm-3" style="display:none">
+                                    <input type="checkbox" id="CHX_permiso_notificaciones" style="transform: scale(1.2);" />
+                                    <label for="CHX_permiso_notificaciones" class="control-label">
+                                        Notificaciones
+                                    </label>
+                                </div>
+                                <div class="col-sm-4" style="display:none">
+                                    <input type="checkbox" id="CHX_permiso_preg_frecuentes" style="transform: scale(1.2);" />
+                                    <label for="CHX_permiso_preg_frecuentes" class="control-label">
+                                        Preguntas frecuentes
+                                    </label>
+                                </div>
+                                <div class="col-sm-4" style="display:none">
+                                    <input type="checkbox" id="CHX_permiso_grupos" style="transform: scale(1.2);" />
+                                    <label for="CHX_permiso_grupos" class="control-label">
+                                        Grupos
+                                    </label>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <table id="grilla_module" class="grid w-100">
+                    <thead>
+                        <tr>
+                            <th class="header-table" style="display:none">Id</th>
+                            <th class="header-table" style="width:50%">Opciones de Modulo</th>
+                            <th class="header-table" style="width:10%;text-align:center">
+                                <input type="checkbox" id="chk_usuario_permiso_acceso" style="vertical-align:inherit;cursor:pointer">&nbsp;
+                                <label for="chk_usuario_permiso_acceso" style="cursor: pointer">Acesso</label>
+                            </th>
+                            <th class="header-table" style="width:10%;text-align:center">
+                                <input type="checkbox" id="chk_usuario_permiso_insertar" style="vertical-align: inherit; cursor: pointer">&nbsp;
+                                <label for="chk_usuario_permiso_insertar" style="cursor: pointer">Insertar</label>
+                            </th>
+                            <th class="header-table" style="width:10%;text-align:center">
+                                <input type="checkbox" id="chk_usuario_permiso_editar" style="vertical-align: inherit; cursor: pointer">&nbsp;
+                                <label for="chk_usuario_permiso_editar" style="cursor: pointer">Editar</label>
+                            </th>
+                            <th class="header-table" style="width:10%;text-align:center">
+                                <input type="checkbox" id="chk_usuario_permiso_eliminar" style="vertical-align: inherit; cursor: pointer">&nbsp;
+                                <label for="chk_usuario_permiso_eliminar" style="cursor: pointer">Eliminar</label>
+                            </th>
+                            <th class="header-table" style="width:10%;text-align:center">
+                                <input type="checkbox" id="chk_usuario_permiso_excel" style="vertical-align: inherit; cursor: pointer">&nbsp;
+                                <label for="chk_usuario_permiso_excel" style="cursor: pointer">Excel</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="listado_module">
+                        <tr>
+                            <td colspan="7" style="text-align:center">No hay Resultado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<jtse-modal id="MDL_USUARIO_PERMISO">
+    <div class="col-24">
+        <div class="form-horizontal" data-container="FMR_USUARIO_PERMISO">
+            <div class="row">
+                <div class="col-12 col-offset-12">
+                    <div class="form-group">
+                        <div class="col-24">
+                            <div class="input-group">
+                                <input id="TXT_UP_BUSCAR_USUARIO" type="text" class="form-control" placeholder="Busqueda de Usuario">
+                                <span id="BTN_UP_BUSCAR" class="input-group-btn" role="search">
+                                    <button type="button" class="btn">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style=" margin-left: -16px; margin-right: -16px;">
+                <jtse-grid id="GRID_UP_BUSCAR_USUARIO" class="col-sm-24">
+                </jtse-grid>
+            </div>
+            <br />
+        </div>
+    </div>
+</jtse-modal>

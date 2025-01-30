@@ -1,0 +1,55 @@
+﻿.jtse-accordion {
+    padding-bottom: 10px;
+}
+
+    .jtse-accordion > .accordion-btn {
+        display: none;
+        text-align: right;
+    }
+
+        .jtse-accordion > .accordion-btn i {
+            padding: 5px 17px;
+            color: #fff;
+            position: relative;
+            width: 42px;
+            background-color: #62a8ea;
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008080', endColorstr='#62a8ea',GradientType=0 );
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+    .jtse-accordion > .accordion-header {
+        background-color: #62a8ea;
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008080', endColorstr='#62a8ea',GradientType=0 );
+        color: #fff;
+        padding: 10px 15px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        .jtse-accordion > .accordion-header i {
+            margin-top: 4px;
+        }
+
+    .jtse-accordion > .accordion-body {
+        padding-top: 10px;
+    }
+
+        .jtse-accordion > .accordion-body > .accordion-content {
+            clear: both;
+            display: table;
+            width: 100%;
+        }
+
+        .jtse-accordion > .accordion-body.collapsing {
+            position: relative;
+            overflow: hidden;
+            -webkit-transition-property: height, visibility;
+            transition-property: height, visibility;
+            -webkit-transition-duration: 0.35s;
+            transition-duration: 0.35s;
+            -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+        }

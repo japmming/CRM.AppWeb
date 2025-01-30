@@ -1,0 +1,107 @@
+﻿<div class="page-content">
+    <div class="panel">
+        <header class="panel-header">
+            <h3 class="panel-title">Listado de Campañas</h3>
+        </header>
+        <div class="panel-body">
+            <jtse-grid id="grd_Campana" class="col-sm-24"></jtse-grid>
+        </div>
+    </div>
+</div>
+
+<jtse-modal id="mdl_Editar_Campana">
+    <div class="row">
+        <style>
+            .form-horizontal .control-label {
+                text-align: left;
+            }
+        </style>
+        <div class="col-sm-24 form-horizontal" data-container="FRM_MDL_CAMPANA" >
+
+            <jtse-accordion id="tab_MDLUsuariosCamp">
+                <div class="row" >
+                    <div class="col-sm-24">
+                        <div class="form-group">
+                            <div class="col-sm-24">
+                                <label class="control-label col-sm-24">Código * :</label>
+                                <div class="col-sm-24">
+                                    <input type="text" class="form-control required" id="TXT_MDLCAMPANA_CODIGO" maxlength="120" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-24">
+                                <label class="control-label col-sm-24">Nombre * :</label>
+                                <div class="col-sm-24">
+                                    <input type="text" class="form-control required" id="TXT_MDLNOMBRE_NOMBRE" maxlength="140" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-24">
+                        <div class="form-group">
+                            <div class="col-sm-24">
+                                <label class="control-label col-sm-24">Fecha de Inicio * :</label>
+                                <div class="col-sm-24">
+                                    <div class="input-group">
+                                        <input type="text" id="TXT_MDLCAMPANA_FECHA_INICIO" class="form-control validate-date required" placeholder="dd/mm/aaaa" autocomplete="off">
+                                        <span id="DTP_MDLCAMPANA_FECHA_INICIO" class="input-group-btn" role="calendar">
+                                            <button class="btn" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-24">
+                        <div class="form-group">
+                            <div class="col-sm-24">
+                                <label class="control-label col-sm-24">Fecha de Termino * :</label>
+                                <div class="col-sm-24">
+                                    <div class="input-group">
+                                        <input type="text" id="TXT_MDLCAMPANA_FECHA_FIN" class="form-control validate-date required" placeholder="dd/mm/aaaa" autocomplete="off">
+                                        <span id="DTP_MDLCAMPANA_FECHA_FIN" class="input-group-btn" role="calendar">
+                                            <button class="btn" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <style>
+                        .form-horizontal .control-label {
+                            padding-top: 0px;
+                        }
+
+                        @media (max-width: 768px) {
+                            .col-sm-12 {
+                                padding-bottom: 0px;
+                            }
+                        }
+                    </style>
+                    <div class="col-sm-24 form-horizontal" id="DIV_MDLUsuarios_USER">
+
+                    </div>
+                </div>
+                
+            </jtse-accordion>
+        </div>
+
+    </div>
+
+</jtse-modal>
+
+<jtse-modal id="MDL_lista_eventos">
+    <div class="row">
+        <view view-name="VW-MDLLista_Eventos"></view>
+    </div>
+</jtse-modal>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC1421E0-79CB-4CCF-A1B2-D3059FDA706B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GS1Peru.Core</RootNamespace>
+    <AssemblyName>GS1Peru.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.103.23\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleEmailV2, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SimpleEmailV2.3.7.101.54\lib\net45\AWSSDK.SimpleEmailV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\enCaptcha.cs" />
+    <Compile Include="Entities\enEmail.cs" />
+    <Compile Include="Entities\enLog.cs" />
+    <Compile Include="Entities\enStartup.cs" />
+    <Compile Include="Entities\IP\IpInfo.cs" />
+    <Compile Include="Entities\IP\IpProperties.cs" />
+    <Compile Include="Entities\Mail\Attachment.cs" />
+    <Compile Include="Entities\Mail\LinkedResource.cs" />
+    <Compile Include="Entities\Mail\MailAddress.cs" />
+    <Compile Include="Entities\Mail\MailMessage.cs" />
+    <Compile Include="Entities\SourceFileMemory.cs" />
+    <Compile Include="Entities\StatusResponse.cs" />
+    <Compile Include="Entities\StatusResponseObject.cs" />
+    <Compile Include="Helpers\ActiveDirectoryValidator.cs" />
+    <Compile Include="Helpers\AppSettings.cs" />
+    <Compile Include="Helpers\AWSEmailSevice.cs" />
+    <Compile Include="Helpers\Captcha.cs" />
+    <Compile Include="Helpers\ClienteHttp.cs" />
+    <Compile Include="Helpers\CompressionFile.cs" />
+    <Compile Include="Helpers\CompressionImage.cs" />
+    <Compile Include="Helpers\DataSQL.cs" />
+    <Compile Include="Helpers\Email.cs" />
+    <Compile Include="Helpers\Encrypt.cs" />
+    <Compile Include="Helpers\GenerateTextFile.cs" />
+    <Compile Include="Helpers\NumeroToLetra.cs" />
+    <Compile Include="Helpers\ExcepcionCorreo.cs" />
+    <Compile Include="Helpers\Strings.cs" />
+    <Compile Include="Helpers\TextFormat.cs" />
+    <Compile Include="Helpers\UpperCaseUTF8Encoding.cs" />
+    <Compile Include="Helpers\XMLHttpRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Word\Correspondencia.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.SimpleEmailV2.3.7.101.54\analyzers\dotnet\cs\AWSSDK.SimpleEmailV2.CodeAnalysis.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
